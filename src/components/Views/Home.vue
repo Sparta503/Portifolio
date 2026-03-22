@@ -1,0 +1,15 @@
+<template>
+  <div>
+    <Hero />
+    <About />
+    <Projects />
+    <Contact />
+  </div>
+</template>
+
+<script setup>
+import Hero from '../sections/Hero.vue'
+import About from '../sections/About.vue'
+import Projects from '../sections/Projects.vue'
+import Contact from '../sections/Contact.vue'
+</script>
