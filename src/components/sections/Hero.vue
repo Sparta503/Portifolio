@@ -1,6 +1,6 @@
 <template>
   <section
-    class="h-[80vh] flex items-center justify-center text-white relative overflow-visible"
+    class="h-[90vh] flex items-center justify-center text-white relative overflow-visible"
     :style="{
       backgroundImage: `url(${heroBg})`,
       backgroundSize: 'cover',
