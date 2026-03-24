@@ -10,9 +10,9 @@
   >
     <div class="absolute inset-0 bg-black/60"></div>
 
-    <div class="w-full max-w-6xl px-6 relative z-10">
+    <div class="w-full max-w-6xl px-6 relative z-10 mx-auto">
       <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div class="max-w-2xl">
+        <div class="flex flex-col justify-center md:max-w-xl">
           <p class="text-sm md:text-base text-white/80 tracking-wide hero-anim hero-anim-1">
             Hi there! <span class="mx-2">👋</span> I’m Tkay
           </p>
@@ -41,8 +41,8 @@
           </div>
         </div>
 
-        <div class="hidden md:flex justify-end hero-anim hero-anim-6 w-full">
-          <img :src="profileImg" alt="Profile" class="w-full max-w-lg max-h-72 h-auto object-contain" />
+        <div class="hidden md:flex justify-end hero-anim hero-anim-6">
+          <img :src="profileImg" alt="Profile" class="w-full max-w-xl max-h-96 h-auto object-contain" />
         </div>
       </div>
     </div>
