@@ -17,8 +17,8 @@
         
         <!-- LEFT TEXT -->
         <div class="flex flex-col justify-center md:max-w-xl">
-          <p class="text-sm md:text-base text-white/80 tracking-wide hero-anim hero-anim-1">
-            Hi there! <span class="mx-2">👋</span> I’m Tkay
+          <p class="text-lg md:text-xl text-white/80 tracking-widest hero-anim hero-anim-1">
+            Hi there! <span class="wave-hand relative inline-block" style="font-size: 3rem;">👋</span> I’m Takunda Chomunodisa
           </p>
 
           <h1 class="mt-4 leading-none hero-anim hero-anim-2">
@@ -26,13 +26,13 @@
               CREATIVE
             </span>
             <span class="block text-5xl md:text-7xl font-semibold italic tracking-tight">
-              DESIGNER
+              MIND SETS AND DEVELOPER
             </span>
           </h1>
 
           <div class="mt-5 flex items-center gap-3 text-xs md:text-sm text-white/70 hero-anim hero-anim-3">
             <span class="h-1.5 w-1.5 rounded-full bg-white/50"></span>
-            <span>BASED IN SOUTH AFRICA</span>
+            <span>BASED IN AFRICA  ZIMBABWE</span>
           </div>
 
           <p class="mt-6 text-base md:text-lg text-white/75 max-w-xl hero-anim hero-anim-4">
@@ -75,7 +75,6 @@
 
     <!-- SOCIAL ICONS -->
     <div class="hidden md:flex flex-col items-center gap-10 absolute top-1/2 right-20 -translate-y-1/2 z-30">
-
       <div class="w-px h-16 bg-white/30"></div>
 
       <a href="#" class="social-icon">
@@ -105,9 +104,7 @@
       <a href="#" class="social-icon">
         <i class="fab fa-github fa-3x"></i>
       </a>
-
     </div>
-
   </section>
 </template>
 
@@ -123,35 +120,15 @@ import profileImg from '../../assets/pro.jpeg'
   animation: heroFadeUp 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.hero-anim-1 {
-  animation-delay: 80ms;
-}
-
-.hero-anim-2 {
-  animation-delay: 170ms;
-}
-
-.hero-anim-3 {
-  animation-delay: 260ms;
-}
-
-.hero-anim-4 {
-  animation-delay: 350ms;
-}
-
-.hero-anim-5 {
-  animation-delay: 440ms;
-}
-
-.hero-anim-6 {
-  animation-delay: 520ms;
-}
+.hero-anim-1 { animation-delay: 80ms; }
+.hero-anim-2 { animation-delay: 170ms; }
+.hero-anim-3 { animation-delay: 260ms; }
+.hero-anim-4 { animation-delay: 350ms; }
+.hero-anim-5 { animation-delay: 440ms; }
+.hero-anim-6 { animation-delay: 520ms; }
 
 @keyframes heroFadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* SOCIAL ICONS */
@@ -161,17 +138,61 @@ import profileImg from '../../assets/pro.jpeg'
   opacity: 0.7;
   transition: all 0.3s ease;
 }
-
 .social-icon:hover {
   opacity: 1;
   transform: translateY(-4px) scale(1.15);
   color: #3b82f6;
 }
 
+/* WAVING HAND ANIMATION */
+.wave-hand {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 1.5s infinite ease-in-out;
+  position: relative;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* TRAILS FOR HAND */
+.wave-hand::before,
+.wave-hand::after {
+  content: '👋';
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  pointer-events: none;
+  animation: wave-trail 1.2s ease-in-out infinite;
+}
+.wave-hand::after {
+  opacity: 0.15;
+  animation-delay: 0.1s;
+}
+
+@keyframes wave-trail {
+  0% { transform: rotate(0deg) translateX(0); opacity: 0.3; }
+  50% { transform: rotate(20deg) translateX(2px); opacity: 0.15; }
+  100% { transform: rotate(0deg) translateX(0); opacity: 0.3; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-anim {
     opacity: 1;
     transform: none;
+    animation: none;
+  }
+  .wave-hand,
+  .wave-hand::before,
+  .wave-hand::after {
     animation: none;
   }
 }
