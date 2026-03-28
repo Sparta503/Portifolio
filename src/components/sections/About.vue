@@ -4,7 +4,7 @@
     <div class="max-w-[50vw] mx-auto px-6">
       
       <!-- Card -->
-      <div class="bg-white rounded-2xl shadow-xl p-10 md:p-16 grid md:grid-cols-2 gap-x-10 items-center">
+      <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10 grid md:grid-cols-2 gap-x-8 items-start">
 
         <!-- LEFT: Image -->
         <div class="flex justify-center">
