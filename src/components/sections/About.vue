@@ -12,7 +12,7 @@
             <img
               :src="tkayLogo"
               alt="Tkay"
-              class="rounded-lg object-contain w-[280px] h-[320px]"
+              class="rounded-lg object-contain w-[280px] h-[300px]"
             />
 
             <!-- Socials -->
@@ -26,7 +26,7 @@
         </div>
 
         <!-- RIGHT: Content -->
-        <div class="mt-6 md:mt-0">
+        <div class="mt-4 md:mt-0">
           <h2 class="text-3xl md:text-4xl font-bold text-blue-950 leading-snug">
             I am a Software Developer
           </h2>
