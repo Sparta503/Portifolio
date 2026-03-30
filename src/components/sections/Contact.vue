@@ -82,20 +82,47 @@
             </p>
           </div>
         </div>
-        <!-- Website / Portfolio -->
-            <div class="bg-white p-5 rounded-xl shadow-md flex items-start gap-4 hover:shadow-lg transition">
-             <div class="w-12 h-12 flex items-center justify-center bg-purple-500 text-white rounded-lg text-xl">
-              🌐
-              </div>
-            <div>
-              <h3 class="font-semibold text-gray-800">Website</h3>
+
+        <!-- Website -->
+        <div class="bg-white p-5 rounded-xl shadow-md flex items-start gap-4 hover:shadow-lg transition">
+          <div class="w-12 h-12 flex items-center justify-center bg-purple-500 text-white rounded-lg text-xl">
+            🌐
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-800">Website</h3>
             <p class="text-sm text-gray-600">
-            www.yourportfolio.com
+              www.yourportfolio.com
             </p>
-            </div>
-           </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// reactive form fields
+const name = ref<string>("")
+const email = ref<string>("")
+const message = ref<string>("")
+
+// submit handler
+const handleSubmit = () => {
+  console.log("Form submitted:", {
+    name: name.value,
+    email: email.value,
+    message: message.value
+  })
+
+  // reset form
+  name.value = ""
+  email.value = ""
+  message.value = ""
+
+  alert("Message sent successfully 🚀")
+}
+</script>
