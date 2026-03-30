@@ -1,62 +1,53 @@
 <template>
-  <section id="skills" class="py-20 bg-blue-600 text-white">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-y-12 md:gap-x-60 items-center justify-between">
+  <section id="skills" class="py-24 bg-blue-600 text-white">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
       <!-- LEFT SIDE (Text) -->
       <div>
-        <h2 class="text-4xl font-bold mb-6">My Skills</h2>
+        <h2 class="text-5xl font-bold mb-6">What I do?</h2>
 
         <p class="text-blue-100 leading-relaxed mb-4">
-          I build modern, scalable applications using cutting-edge technologies.
-          My focus is on clean architecture, performance, and user experience.
+          I specialize in designing user experiences, crafting engaging interfaces,
+          and building robust web applications that deliver value and usability.
         </p>
 
-        <p class="text-blue-100 leading-relaxed">
-          From frontend interfaces to backend systems, I create solutions that are
-          efficient, responsive, and production-ready.
+        <p class="text-blue-100 leading-relaxed mb-6">
+          My approach combines creativity and technical expertise to deliver
+          solutions that are visually appealing and highly functional.
         </p>
+
+        <button class="bg-purple-500 hover:bg-purple-600 px-6 py-3 rounded-lg shadow-lg transition">
+          Say Hello!
+        </button>
       </div>
 
-      <!-- RIGHT SIDE (Cards like screenshot) -->
-      <div class="grid grid-cols-2 gap-6">
+      <!-- RIGHT SIDE (STACKED CARDS) -->
+      <div class="space-y-6">
 
-        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-lg hover:-translate-y-2 transition">
-          <div class="bg-purple-100 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
-            💻
-          </div>
-          <h3 class="font-semibold mb-2">1. Frontend</h3>
+        <!-- CARD -->
+        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-md border-l-4 border-purple-500">
+          <h3 class="font-semibold text-lg mb-2">User Experience (UX)</h3>
           <p class="text-sm text-gray-600">
-            Vue, TypeScript, TailwindCSS for building responsive UI.
+            I design intuitive and enjoyable experiences by understanding user needs,
+            conducting research, and creating wireframes and prototypes.
           </p>
         </div>
 
-        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-lg hover:-translate-y-2 transition">
-          <div class="bg-purple-100 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
-            ⚙️
-          </div>
-          <h3 class="font-semibold mb-2">2. Backend</h3>
+        <!-- CARD -->
+        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-md">
+          <h3 class="font-semibold text-lg mb-2">User Interface (UI)</h3>
           <p class="text-sm text-gray-600">
-            Node.js and REST APIs for scalable backend systems.
+            I craft visually appealing and consistent interfaces, focusing on layout,
+            color, and typography to ensure a seamless experience.
           </p>
         </div>
 
-        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-lg hover:-translate-y-2 transition">
-          <div class="bg-purple-100 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
-            🛠️
-          </div>
-          <h3 class="font-semibold mb-2">3. Tools</h3>
+        <!-- CARD -->
+        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-md">
+          <h3 class="font-semibold text-lg mb-2">Web Development</h3>
           <p class="text-sm text-gray-600">
-            Git, Vite and modern tooling for efficient development.
-          </p>
-        </div>
-
-        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-lg hover:-translate-y-2 transition">
-          <div class="bg-purple-100 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
-            🚀
-          </div>
-          <h3 class="font-semibold mb-2">4. Deployment</h3>
-          <p class="text-sm text-gray-600">
-            Deploying apps with performance and scalability in mind.
+            I build responsive and high-performance web applications using modern
+            technologies, ensuring scalability and maintainability.
           </p>
         </div>
 
@@ -67,5 +58,5 @@
 </template>
 
 <script setup lang="ts">
-// no logic needed here anymore (UI-focused section)
+// UI only
 </script>
