@@ -30,8 +30,24 @@
       <li>
         <a href="#experience" class="nav-link">Experience</a>
       </li>
-      <li>
-        <a href="#education" class="nav-link">Education</a>
+      <li class="relative group">
+        <a href="#education" class="nav-link inline-flex items-center gap-2" aria-haspopup="menu" aria-expanded="false">
+          Blog
+          <svg class="h-4 w-4 opacity-80 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </a>
+
+        <div class="absolute left-0 top-full pt-2 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 transition-all duration-200 z-50">
+          <ul class="min-w-48 rounded-xl border border-black/10 bg-white text-gray-900 shadow-lg overflow-hidden" role="menu">
+            <li>
+              <a href="#education-all-posts" class="block px-4 py-3 text-sm hover:bg-gray-100" role="menuitem">All Posts</a>
+            </li>
+            <li>
+              <a href="#education-categories" class="block px-4 py-3 text-sm hover:bg-gray-100" role="menuitem">Categories</a>
+            </li>
+          </ul>
+        </div>
       </li>
       <li>
         <a href="#achievements" class="nav-link">Achievements</a>
