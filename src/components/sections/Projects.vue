@@ -74,12 +74,12 @@
 </template>
 
 <script setup lang="ts">
-import img1 from "../../assets/Heroo.png"
-import img2 from "../../assets/Heroo.png"
-import img3 from "../../assets/Heroo.png"
-import img4 from "../../assets/Heroo.png"
-import img5 from "../../assets/Heroo.png"
-import img6 from "../../assets/Heroo.png"
+import img1 from "../../assets/hospital mobile.png"
+import img2 from "../../assets/facebook markting.png"
+import img3 from "../../assets/hospital mnagement.png"
+import img4 from "../../assets/DeviceTracker.png"
+import img5 from "../../assets/Hospital advertisement.png"
+import img6 from "../../assets/School management.png"
 
 interface Project {
   title: string
@@ -88,12 +88,42 @@ interface Project {
   link: string
 }
 
-const projects: Project[] = [
-  { title: "Project 1", description: "Smooth, responsive interfaces. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia.", image: img1, link: "#" },
-  { title: "Project 2", description: "Intuitive dashboards. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia.", image: img2, link: "#" },
-  { title: "Project 3", description: "Modern admin panels. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia.", image: img3, link: "#" },
-  { title: "Project 4", description: "Scalable systems. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia.", image: img4, link: "#" },
-  { title: "Project 5", description: "Extra large visual project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia.", image: img5, link: "#" },
-  { title: "Project 6", description: "Creative UI experiments. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia.", image: img6, link: "#" }
+  const projects: Project[] = [
+  {
+    title: "Hospital Mobile Application",
+    description: "A mobile app designed to streamline hospital services, including patient management, appointments, and real-time communication.",
+    image: img1,
+    link: "https://github.com/Sparta503/hospital-mobile-app"
+  },
+  {
+    title: "Peer-to-Peer Web Application",
+    description: "A decentralized web platform enabling secure peer-to-peer interactions and seamless data exchange between users.",
+    image: img2,
+    link: "https://github.com/Sparta503/p2p-web-app"
+  },
+  {
+    title: "Role-Based Hospital Management System",
+    description: "A full-stack system with role-based access control for managing hospital operations, staff, and patient workflows.",
+    image: img3,
+    link: "https://github.com/Sparta503/hospital-management-system"
+  },
+  {
+    title: "Device Tracking Web & Mobile Application",
+    description: "A cross-platform solution for tracking devices in real-time with location monitoring and reporting features.",
+    image: img4,
+    link: "https://github.com/Sparta503/device-tracking-app"
+  },
+  {
+    title: "Brand Advertisement Web Application",
+    description: "A dynamic platform for managing and showcasing brand campaigns with engaging UI and analytics support.",
+    image: img5,
+    link: "https://github.com/Sparta503/brand-advertisement-app"
+  },
+  {
+    title: "School Management System",
+    description: "A comprehensive system for handling student records, academic processes, and administrative tasks efficiently.",
+    image: img6,
+    link: "https://github.com/Sparta503/school-management-system"
+  }
 ]
 </script>
