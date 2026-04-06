@@ -23,7 +23,12 @@
 
             <!-- LEFT SIDE -->
             <div v-if="index % 2 === 0" class="flex justify-end pr-8">
-              <div class="w-full max-w-md bg-white text-gray-800 p-6 rounded-xl shadow-xl">
+              <div
+                class="w-full max-w-md bg-white text-gray-800 p-6 rounded-xl shadow-lg
+                       transition-all duration-300 ease-out
+                       hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/20
+                       hover:scale-[1.02]"
+              >
                 <h3 class="text-lg font-semibold">{{ item.role }}</h3>
                 <p class="text-sm text-gray-500 mb-2">
                   {{ item.company }} • {{ item.start }} - {{ item.end }}
@@ -38,16 +43,24 @@
             </div>
             <div v-else></div>
 
-            <!-- CENTER DOT -->
+            <!-- CENTER ICON -->
             <div class="flex justify-center">
-              <div class="w-8 h-8 bg-white text-blue-600 rounded-full flex items-center justify-center shadow-lg border-4 border-blue-600">
+              <div
+                class="w-8 h-8 bg-white text-blue-600 rounded-full flex items-center justify-center shadow-lg border-4 border-blue-600
+                       transition-transform duration-300 hover:scale-110"
+              >
                 💼
               </div>
             </div>
 
             <!-- RIGHT SIDE -->
             <div v-if="index % 2 !== 0" class="flex justify-start pl-8">
-              <div class="w-full max-w-md bg-white text-gray-800 p-6 rounded-xl shadow-xl">
+              <div
+                class="w-full max-w-md bg-white text-gray-800 p-6 rounded-xl shadow-lg
+                       transition-all duration-300 ease-out
+                       hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/20
+                       hover:scale-[1.02]"
+              >
                 <h3 class="text-lg font-semibold">{{ item.role }}</h3>
                 <p class="text-sm text-gray-500 mb-2">
                   {{ item.company }} • {{ item.start }} - {{ item.end }}
@@ -84,13 +97,13 @@ type ExperienceItem = {
 const experience: ExperienceItem[] = [
   {
     company: 'Tech Company',
-    role: 'React.js Developer',
+    role: 'Frontend Developer',
     start: '2023',
     end: 'Present',
     highlights: [
-      'Built scalable front-end applications.',
-      'Collaborated with backend teams.',
-      'Improved UI performance and UX.'
+      'Developed scalable and responsive web applications using modern frameworks.',
+      'Collaborated with backend teams to deliver full-stack solutions.',
+      'Enhanced UI/UX performance and optimized application speed.'
     ]
   },
   {
@@ -99,9 +112,9 @@ const experience: ExperienceItem[] = [
     start: '2022',
     end: '2023',
     highlights: [
-      'Worked on AI-driven systems.',
-      'Implemented security best practices.',
-      'Collaborated with data teams.'
+      'Built intelligent systems powered by AI technologies.',
+      'Implemented robust security measures across applications.',
+      'Worked closely with data teams to improve model accuracy.'
     ]
   },
   {
@@ -110,9 +123,9 @@ const experience: ExperienceItem[] = [
     start: '2021',
     end: '2022',
     highlights: [
-      'Developed responsive websites.',
-      'Improved SEO and performance.',
-      'Maintained production apps.'
+      'Designed and developed responsive websites.',
+      'Improved SEO performance and loading speed.',
+      'Maintained and updated production systems.'
     ]
   },
   {
@@ -121,9 +134,9 @@ const experience: ExperienceItem[] = [
     start: '2020',
     end: '2021',
     highlights: [
-      'Built cloud-based systems.',
-      'Worked with IoT integrations.',
-      'Improved scalability.'
+      'Developed scalable cloud-based solutions.',
+      'Integrated IoT devices with real-time monitoring systems.',
+      'Optimized system scalability and reliability.'
     ]
   }
 ]
