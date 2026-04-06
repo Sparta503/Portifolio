@@ -17,10 +17,10 @@
 
             <!-- Socials -->
             <div class="flex justify-center gap-6 mt-6 bg-blue-600 shadow-md py-2 rounded-lg">
-              <a href="#" target="_blank" class="text-white hover:-translate-y-1 hover:scale-110 transition"><i class="fa-brands fa-facebook fa-3x"></i></a>
-              <a href="#" target="_blank" class="text-white hover:-translate-y-1 hover:scale-110 transition"><i class="fa-brands fa-whatsapp fa-3x"></i></a>
-              <a href="#" target="_blank" class="text-white hover:-translate-y-1 hover:scale-110 transition"><i class="fa-brands fa-instagram fa-3x"></i></a>
-              <a href="#" target="_blank" class="text-white hover:-translate-y-1 hover:scale-110 transition"><i class="fa-brands fa-twitter fa-3x"></i></a>
+              <a href="https://www.facebook.com/TakuInnovations" target="_blank" class="text-white hover:-translate-y-1 hover:scale-110 transition"><i class="fa-brands fa-facebook fa-3x"></i></a>
+              <a href="https://wa.me/263780488779" target="_blank" class="text-white hover:-translate-y-1 hover:scale-110 transition"><i class="fa-brands fa-whatsapp fa-3x"></i></a>
+              <a href="https://www.instagram.com/achomunodisa/?hl=en" target="_blank" class="text-white hover:-translate-y-1 hover:scale-110 transition"><i class="fa-brands fa-instagram fa-3x"></i></a>
+              <a href="https://x.com/chomunodisaa68" target="_blank" class="text-white hover:-translate-y-1 hover:scale-110 transition"><i class="fa-brands fa-twitter fa-3x"></i></a>
             </div>
           </div>
         </div>
