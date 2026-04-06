@@ -15,8 +15,11 @@
           My approach combines creativity and technical expertise to deliver
           solutions that are visually appealing and highly functional.
         </p>
-
-        <a href="https://api.whatsapp.com/send?phone=263776452802&text=Hello" target="_blank">
+   
+       <a href="https://api.whatsapp.com/send?phone=263776452802&text=Hello" 
+             target="_blank" 
+             rel="noopener noreferrer"    
+             > 
           <button class="bg-purple-500 hover:bg-purple-600 px-6 py-3 rounded-lg shadow-lg transition">
             Say Hello!
           </button>
