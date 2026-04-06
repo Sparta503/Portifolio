@@ -23,20 +23,23 @@
         <div 
           v-for="item in achievements"
           :key="item.title"
-          class="grid grid-cols-3 py-6 items-center hover:bg-white/10 transition-all duration-300"
+          class="grid grid-cols-3 py-6 items-center 
+                 transition-all duration-300 ease-out
+                 hover:bg-white/10 hover:-translate-y-1 hover:scale-[1.01] 
+                 hover:shadow-lg hover:shadow-black/10 rounded-lg px-4"
         >
           <!-- LEFT -->
-          <p class="text-white font-medium">
+          <p class="text-white font-medium transition">
             {{ item.title }}
           </p>
 
           <!-- CENTER -->
-          <p class="text-white/80 text-sm">
+          <p class="text-white/80 text-sm transition">
             {{ item.category }}
           </p>
 
           <!-- RIGHT -->
-          <p class="text-right text-white/80">
+          <p class="text-right text-white/80 transition">
             {{ item.year }}
           </p>
         </div>
