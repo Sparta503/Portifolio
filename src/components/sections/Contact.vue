@@ -41,7 +41,6 @@
     </div>
   </section>
 </template>
-
 <script setup lang="ts">
 import { ref, onMounted } from "vue"
 import * as THREE from "three"
@@ -52,11 +51,13 @@ const email = ref("")
 const message = ref("")
 
 const handleSubmit = () => {
-  console.log({ name: name.value, email: email.value, message: message.value })
+  const text = `Name: ${name.value}\nEmail: ${email.value}\n\n${message.value}`
+  const url = `https://wa.me/263780488779?text=${encodeURIComponent(text)}`
+  window.open(url, "_blank", "noopener,noreferrer")
+
   name.value = ""
   email.value = ""
   message.value = ""
-  alert("Message sent ")
 }
 
 // ================= 3D SPHERE =================
@@ -80,69 +81,167 @@ onMounted(() => {
   renderer.setPixelRatio(window.devicePixelRatio)
   canvasContainer.value.appendChild(renderer.domElement)
 
-  // 🌍 MAIN SPHERE
+  // 🌍 MAIN SPHERE (more realistic)
   const sphereGeo = new THREE.SphereGeometry(1, 64, 64)
   const sphereMat = new THREE.MeshStandardMaterial({
-    color: "#8b5cf6", // purple globe
-    roughness: 0.4,
-    metalness: 0.9
+    color: "#8b5cf6",
+    roughness: 0.35,
+    metalness: 0.85
   })
   const sphere = new THREE.Mesh(sphereGeo, sphereMat)
   scene.add(sphere)
 
-  // ✨ GLOW LAYER
-  const glowGeo = new THREE.SphereGeometry(1.02, 64, 64)
+  // ✨ GLOW
+  const glowGeo = new THREE.SphereGeometry(1.05, 64, 64)
   const glowMat = new THREE.MeshBasicMaterial({
-    color: "#d8b4fe", // light purple glow
+    color: "#c084fc",
     transparent: true,
-    opacity: 0.15
+    opacity: 0.18
   })
   const glow = new THREE.Mesh(glowGeo, glowMat)
   scene.add(glow)
 
-  // 🌀 ORBIT RINGS
+  // 🌀 ORBITS
   const rings: THREE.Mesh[] = []
-  const ringColors = ["#3b82f6", "#a855f7", "#f43f5e", "#facc15", "#10b981", "#f97316"]
+  const colors = ["#22d3ee", "#f472b6", "#facc15", "#a3e635"]
+  const ringTilts = [-0.55, -0.18, 0.18, 0.55]
 
-  for (let i = 0; i < 6; i++) {
-    const ringGeo = new THREE.TorusGeometry(1.3, 0.06, 16, 100)
-    const ringMat = new THREE.MeshStandardMaterial({
-      color: ringColors[i],
-      roughness: 0.2,
-      metalness: 0.8
-    })
-    const ring = new THREE.Mesh(ringGeo, ringMat)
-    ring.rotation.x = Math.random() * Math.PI
-    ring.rotation.y = Math.random() * Math.PI
+  for (let i = 0; i < 4; i++) {
+    const ring = new THREE.Mesh(
+      new THREE.TorusGeometry(1.3, 0.05, 16, 100),
+      new THREE.MeshStandardMaterial({
+        color: colors[i],
+        metalness: 1,
+        roughness: 0.2
+      })
+    )
+
+    const baseX = ringTilts[i] + (Math.random() - 0.5) * 0.35
+    const rotY0 = Math.random() * Math.PI * 2
+    const baseZ = Math.random() * Math.PI
+
+    ring.rotation.x = baseX
+    ring.rotation.y = rotY0
+    ring.rotation.z = baseZ
+
+    ring.userData = {
+      baseX,
+      rotY0,
+      baseZ,
+      phase: Math.random() * Math.PI * 2,
+      orbitSpeed: 0.9 + Math.random() * 1.3,
+      wobbleSpeedX: 0.7 + Math.random() * 0.9,
+      wobbleSpeedZ: 0.7 + Math.random() * 0.9,
+      wobbleAmpX: 0.08 + Math.random() * 0.08,
+      wobbleAmpZ: 0.06 + Math.random() * 0.08
+    }
+
     scene.add(ring)
     rings.push(ring)
   }
 
-  // 💡 LIGHTING
+  // ✨ PARTICLES (stars around sphere)
+  const particlesGeometry = new THREE.BufferGeometry()
+  const particlesCount = 800
+
+  const posArray = new Float32Array(particlesCount * 3)
+
+  for (let i = 0; i < particlesCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 10
+  }
+
+  particlesGeometry.setAttribute(
+    "position",
+    new THREE.BufferAttribute(posArray, 3)
+  )
+
+  const particlesMaterial = new THREE.PointsMaterial({
+    size: 0.01,
+    color: "#ffffff"
+  })
+
+  const particlesMesh = new THREE.Points(
+    particlesGeometry,
+    particlesMaterial
+  )
+  scene.add(particlesMesh)
+
+  // 💡 LIGHTS
   const light1 = new THREE.PointLight("#ffffff", 1.5)
   light1.position.set(5, 5, 5)
+
   const light2 = new THREE.PointLight("#3b82f6", 1)
   light2.position.set(-5, -5, -5)
-  const ambient = new THREE.AmbientLight("#ffffff", 0.3)
-  scene.add(light1, light2, ambient)
+
+  scene.add(light1, light2)
+
+  // 🖱️ MOUSE INTERACTION
+  let isDragging = false
+  let previousMousePosition = { x: 0, y: 0 }
+
+  renderer.domElement.addEventListener("mousedown", () => {
+    isDragging = true
+  })
+
+  renderer.domElement.addEventListener("mouseup", () => {
+    isDragging = false
+  })
+
+  renderer.domElement.addEventListener("mousemove", (e) => {
+    if (!isDragging) return
+
+    const deltaMove = {
+      x: e.offsetX - previousMousePosition.x,
+      y: e.offsetY - previousMousePosition.y
+    }
+
+    sphere.rotation.y += deltaMove.x * 0.005
+    sphere.rotation.x += deltaMove.y * 0.005
+
+    previousMousePosition = {
+      x: e.offsetX,
+      y: e.offsetY
+    }
+  })
 
   // 🎬 ANIMATION
   const animate = () => {
     requestAnimationFrame(animate)
-    sphere.rotation.y += 0.004
-    glow.rotation.y += 0.004
-    rings.forEach((ring, i) => {
-      ring.rotation.x += 0.002 + i * 0.0005
-      ring.rotation.y += 0.003 + i * 0.0005
+
+    const t = performance.now() * 0.001
+
+    sphere.rotation.y += 0.002
+    glow.rotation.y += 0.002
+
+    rings.forEach((ring) => {
+      const baseX = ring.userData.baseX ?? 0
+      const rotY0 = ring.userData.rotY0 ?? 0
+      const baseZ = ring.userData.baseZ ?? 0
+      const phase = ring.userData.phase ?? 0
+      const orbitSpeed = ring.userData.orbitSpeed ?? 1.5
+      const wobbleSpeedX = ring.userData.wobbleSpeedX ?? 1.2
+      const wobbleSpeedZ = ring.userData.wobbleSpeedZ ?? 1.1
+      const wobbleAmpX = ring.userData.wobbleAmpX ?? 0.12
+      const wobbleAmpZ = ring.userData.wobbleAmpZ ?? 0.08
+
+      ring.rotation.y = rotY0 + t * orbitSpeed
+      ring.rotation.x = baseX + Math.sin(t * wobbleSpeedX + phase) * wobbleAmpX
+      ring.rotation.z = baseZ + Math.cos(t * wobbleSpeedZ + phase) * wobbleAmpZ
     })
+
+    particlesMesh.rotation.y += 0.0005
+
     renderer.render(scene, camera)
   }
+
   animate()
 
   // 📱 RESPONSIVE
   window.addEventListener("resize", () => {
     if (!canvasContainer.value) return
+
     const width = canvasContainer.value.clientWidth
+
     camera.aspect = width / 450
     camera.updateProjectionMatrix()
     renderer.setSize(width, 450)
