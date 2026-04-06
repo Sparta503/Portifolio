@@ -61,13 +61,13 @@ type EducationItem = {
 
 const education: EducationItem[] = [
   {
-    school: 'Your University',
-    program: 'B.Sc. Computer Science',
-    location: 'Your City',
-    start: '2020',
-    end: '2024',
-    details: 'Focused on software engineering, web development, and data structures.',
-    highlights: ['Graduated with strong academic performance', 'Built multiple web projects']
+    school: 'University of Zimbabwe',
+    program: 'B.Sc. Cloud Computing And Internet Of Things',
+    location: 'Harare, Zimbabwe',
+    start: '2023',
+    end: '2026',
+    details: 'Delving deep into the realm of software engineering, web development, and Mobile Development to unlock the power of innovative solutions.',
+    highlights: ['Currently pursuing degree', 'Building multiple ML and AI projects and Problem solving']
   }
 ]
 </script>
