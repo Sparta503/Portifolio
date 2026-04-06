@@ -36,7 +36,7 @@
           </div>
 
           <p class="mt-6 text-base md:text-lg text-white/75 max-w-xl hero-anim hero-anim-4">
-            I build modern, scalable web applications with clean UI and a strong focus on user experience.
+            I build modern, scalable web  and mobile applications with clean UI and a strong focus on user experience.
           </p>
 
           <!-- BUTTONS -->
@@ -77,31 +77,31 @@
     <div class="hidden md:flex flex-col items-center gap-10 absolute top-1/2 right-20 -translate-y-1/2 z-30">
       <div class="w-px h-16 bg-white/30"></div>
 
-      <a href="#" class="social-icon">
+      <a href="https://www.instagram.com/achomunodisa/?hl=en" target="_blank" rel="noopener noreferrer" class="social-icon">
         <i class="fab fa-instagram fa-3x"></i>
       </a>
 
-      <a href="#" class="social-icon">
+      <a href="https://x.com/chomunodisaa68" target="_blank" rel="noopener noreferrer" class="social-icon">
         <i class="fab fa-twitter fa-3x"></i>
       </a>
 
-      <a href="#" class="social-icon">
+      <a href="https://www.facebook.com/TakuInnovations" target="_blank" rel="noopener noreferrer" class="social-icon">
         <i class="fab fa-facebook fa-3x"></i>
       </a>
 
-      <a href="#" class="social-icon">
+      <a href="https://wa.me/263780488779" target="_blank" rel="noopener noreferrer" class="social-icon">
         <i class="fab fa-whatsapp fa-3x"></i>
       </a>
 
-      <a href="#" class="social-icon">
+      <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank" rel="noopener noreferrer" class="social-icon">
         <i class="fas fa-envelope fa-3x"></i>
       </a>
 
-      <a href="#" class="social-icon">
+      <a href="https://www.linkedin.com/in/abel-chomunodisa-765280270/" target="_blank" rel="noopener noreferrer" class="social-icon">
         <i class="fab fa-linkedin fa-3x"></i>
       </a>
 
-      <a href="#" class="social-icon">
+      <a href="https://github.com/Sparta503" target="_blank" rel="noopener noreferrer" class="social-icon">
         <i class="fab fa-github fa-3x"></i>
       </a>
     </div>
