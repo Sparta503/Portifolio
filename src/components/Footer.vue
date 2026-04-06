@@ -9,7 +9,7 @@
         <div class="text-center md:text-left">
           <h1 class="text-4xl font-bold text-white">Tkay.dev</h1>
           <p class="text-lg mt-2 text-gray-400">
-            Building modern web experiences.
+            Building modern Mobile experiences.
           </p>
         </div>
 
@@ -31,10 +31,20 @@
         </ul>
 
         <!-- Socials -->
-        <div class="flex gap-6 text-lg">
-          <a href="#" class="inline-flex hover:text-white hover:-translate-y-0.5 transition-all duration-200">GitHub</a>
-          <a href="#" class="inline-flex hover:text-white hover:-translate-y-0.5 transition-all duration-200">LinkedIn</a>
-          <a href="#" class="inline-flex hover:text-white hover:-translate-y-0.5 transition-all duration-200">Twitter</a>
+        <div class="flex items-center gap-8 text-3xl">
+          
+          <a href="https://wa.me/263780488779" target="_blank" rel="noopener noreferrer" class="inline-flex opacity-80 hover:opacity-100 hover:text-white hover:-translate-y-0.5 transition-all duration-200" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank" rel="noopener noreferrer" class="inline-flex opacity-80 hover:opacity-100 hover:text-white hover:-translate-y-0.5 transition-all duration-200" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/abel-chomunodisa-765280270/" target="_blank" rel="noopener noreferrer" class="inline-flex opacity-80 hover:opacity-100 hover:text-white hover:-translate-y-0.5 transition-all duration-200" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/Sparta503" target="_blank" rel="noopener noreferrer" class="inline-flex opacity-80 hover:opacity-100 hover:text-white hover:-translate-y-0.5 transition-all duration-200" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
         </div>
 
       </div>
