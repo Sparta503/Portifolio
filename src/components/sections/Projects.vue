@@ -119,7 +119,7 @@ const projects: Project[] = [
     title: "Brand Advertisement Web Application",
     description: "A dynamic platform for managing and showcasing brand campaigns with engaging UI and analytics support.",
     image: img5,
-    link: "https://github.com/Sparta503/brand-advertisement-app"
+    link: "https://advertisement-hub-git-main-sparta503s-projects.vercel.app/"
   },
   {
     title: "School Management System",
