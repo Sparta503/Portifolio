@@ -60,23 +60,23 @@ type Achievement = {
 const achievements: Achievement[] = [
   {
     title: "Site Of The Day",
-    category: "CSS & Animation",
-    year: "2018"
+    category: "tailwind & Animation",
+    year: "2022"
   },
   {
     title: "Best Business Model",
     category: "New Strategy",
-    year: "2019"
+    year: "2023"
   },
   {
-    title: "Motion Graphic",
+    title: "Motion Graphics",
     category: "3D & Visual Effect",
-    year: "2020"
+    year: "2024"
   },
   {
     title: "Video Design",
-    category: "CSS & Animation",
-    year: "2022"
+    category: "Canva and Adobe illustrator",
+    year: "2025"
   }
 ]
 </script>
