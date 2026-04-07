@@ -74,7 +74,7 @@
       </div>
 
       <!-- Phone -->
-      <a href="tel:+0000000000" class="p-2 rounded-lg hover:bg-white/10" aria-label="Phone">
+      <a href="tel:+263780488779" class="p-2 rounded-lg hover:bg-white/10" aria-label="Phone">
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.11 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.58a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z" />
         </svg>
