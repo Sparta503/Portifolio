@@ -41,7 +41,7 @@
         <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <a href="#education-all-posts" class="bg-gray-800/60 border border-white/5 rounded-xl px-5 py-4 hover:bg-gray-800/80 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">Education</a>
           <a href="#education-all-posts" class="bg-gray-800/60 border border-white/5 rounded-xl px-5 py-4 hover:bg-gray-800/80 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">Certifications</a>
-          <a href="#education-all-posts" class="bg-gray-800/60 border border-white/5 rounded-xl px-5 py-4 hover:bg-gray-800/80 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">Projects</a>
+          <a href="#education-all-posts" class="bg-gray-800/60 border border-white/5 rounded-xl px-5 py-4 hover:bg-gray-800/80 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">Tech Stack</a>
         </div>
       </div>
     </div>
