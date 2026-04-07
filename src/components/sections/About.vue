@@ -32,8 +32,8 @@
           </h2>
 
           <p class="mt-4 text-xl leading-relaxed">
-            As a creative and innovative software developer, I am passionate about designing and developing
-            cutting-edge web applications that cater to the needs of users. My expertise lies in leveraging modern
+            As a creative and innovative software developer with 5years of Experience, I am passionate about designing and developing
+            cutting-edge web and mobile applications that cater to the needs of users. My expertise lies in leveraging modern
             technologies to create efficient and scalable solutions, always striving to deliver exceptional user
             experiences.
           </p>
