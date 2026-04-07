@@ -87,11 +87,11 @@
       <div class="w-px h-16 bg-white/30"></div>
 
       <a href="https://www.instagram.com/achomunodisa/?hl=en" target="_blank" class="social-icon">
-        <i class="fab fa-instagram fa-2x"></i>
+        <i class="fab fa-instagram fa-3x"></i>
       </a>
 
       <a href="https://x.com/chomunodisaa68" target="_blank" class="social-icon">
-        <i class="fab fa-twitter fa-2x"></i>
+        <i class="fab fa-twitter fa-3x"></i>
       </a>
 
       <a href="https://www.facebook.com/TakuInnovations" target="_blank" class="social-icon">
