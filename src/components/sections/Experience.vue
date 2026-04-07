@@ -96,47 +96,51 @@ type ExperienceItem = {
 
 const experience: ExperienceItem[] = [
   {
-    company: 'Tech Company',
-    role: 'Frontend Developer',
-    start: '2023',
+    company: 'Remote Dev',
+    role: 'Fullstack Mobile Application Developer',
+    start: '2022',
     end: 'Present',
     highlights: [
-      'Developed scalable and responsive web applications using modern frameworks.',
-      'Collaborated with backend teams to deliver full-stack solutions.',
-      'Enhanced UI/UX performance and optimized application speed.'
+      'Built and maintained responsive mobile apps using React Native and modern frameworks.',
+      'Collaborated using GitHub for version control, code reviews, and team workflows.',
+      'Worked with cloud platforms (AWS/OCI) and tools like Docker Compose to streamline app deployment.',
+      'Focused on clean, user-friendly UI to improve overall user experience.'
     ]
   },
   {
-    company: 'AI Lab',
+    company: 'Zb Bank Rusape',
     role: 'AI & Security Engineer',
-    start: '2022',
-    end: '2023',
+    start: '2023',
+    end: '2024',
     highlights: [
-      'Built intelligent systems powered by AI technologies.',
-      'Implemented robust security measures across applications.',
-      'Worked closely with data teams to improve model accuracy.'
+      'Developed AI-driven systems to support data-driven decision-making.',
+      'Implemented secure application architectures and enforced best security practices.',
+      'Used GitHub for structured collaboration and version control across teams.',
+      'Worked closely with data teams to improve model performance and reliability.'
     ]
   },
   {
-    company: 'Startup Inc',
+    company: 'Sakiso Digital',
     role: 'Web Developer',
-    start: '2021',
-    end: '2022',
+    start: '2024',
+    end: '2025',
     highlights: [
-      'Designed and developed responsive websites.',
-      'Improved SEO performance and loading speed.',
-      'Maintained and updated production systems.'
+      'Improved website performance, SEO, and loading speed for better user engagement.',
+      'Collaborated on projects using GitHub for efficient development workflows.',
+      'Deployed web applications using Docker and managed hosting environments.',
+      'Translated user requirements into scalable and maintainable web solutions.'
     ]
   },
   {
-    company: 'Cloud Tech',
-    role: 'Cloud & IoT Engineer',
-    start: '2020',
-    end: '2021',
+    company: 'Data Age Solutions',
+    role: 'Mobile Developer',
+    start: '',
+    end: '',
     highlights: [
-      'Developed scalable cloud-based solutions.',
-      'Integrated IoT devices with real-time monitoring systems.',
-      'Optimized system scalability and reliability.'
+      'Developed mobile applications with a focus on performance and usability.',
+      'Integrated APIs and backend services for seamless functionality.',
+      'Used GitHub for version control and collaboration with development teams.',
+      'Containerised supporting services using Docker to ensure consistent environments.'
     ]
   }
 ]
