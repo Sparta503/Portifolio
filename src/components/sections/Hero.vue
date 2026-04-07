@@ -11,6 +11,34 @@
     <!-- Dark overlay -->
     <div class="absolute inset-0 bg-black/60"></div>
 
+    <!-- LEFT SIDE CONTACT (NEW) -->
+    <div class="hidden md:flex flex-col items-center absolute left-6 top-1/2 -translate-y-1/2 z-30 left-side">
+
+      <!-- Phone -->
+      <div class="rotate-[-90deg] text-sm tracking-widest text-white/70 mb-20">
+        +263 780 488 779
+      </div>
+
+      <!-- Email -->
+      <div class="rotate-[-90deg] text-sm tracking-widest text-white/70 mb-20">
+        takunda@example.com
+      </div>
+
+      <!-- Divider -->
+      <div class="w-px h-20 bg-white/30"></div>
+
+      <!-- Scroll Text -->
+      <div class="rotate-[-90deg] text-xs tracking-[0.3em] text-white/50 mt-16">
+        SCROLL DOWN
+      </div>
+
+      <!-- Arrow -->
+      <div class="mt-6 text-white/50 animate-bounce">
+        ↓
+      </div>
+
+    </div>
+
     <!-- Content -->
     <div class="w-full max-w-7xl px-6 relative z-10 mx-auto">
       <div class="grid md:grid-cols-2 gap-10 items-center">
@@ -32,11 +60,11 @@
 
           <div class="mt-5 flex items-center gap-3 text-xs md:text-sm text-white/70 hero-anim hero-anim-3">
             <span class="h-1.5 w-1.5 rounded-full bg-white/50"></span>
-            <span>BASED IN AFRICA  ZIMBABWE</span>
+            <span>BASED IN AFRICA ZIMBABWE</span>
           </div>
 
           <p class="mt-6 text-base md:text-lg text-white/75 max-w-xl hero-anim hero-anim-4">
-            I build modern, scalable web  and mobile applications with clean UI and a strong focus on user experience.
+            I build modern, scalable web and mobile applications with clean UI and a strong focus on user experience.
           </p>
 
           <!-- BUTTONS -->
@@ -48,7 +76,7 @@
               View My Works
             </a>
 
-            <div class="h-7 w-7"></div> <!-- ADDED SPACING -->
+            <div class="h-7 w-7"></div>
 
             <a href="#contact"
               class="px-10 py-4 rounded-full bg-blue-600 text-white 
@@ -59,7 +87,7 @@
           </div>
         </div>
 
-        <!-- RIGHT SIDE (EMPTY GRID SPACE FOR BALANCE) -->
+        <!-- RIGHT SIDE EMPTY -->
         <div></div>
       </div>
     </div>
@@ -73,44 +101,44 @@
       />
     </div>
 
-    <!-- SOCIAL ICONS -->
+    <!-- SOCIAL ICONS (RIGHT) -->
     <div class="hidden md:flex flex-col items-center gap-10 absolute top-1/2 right-20 -translate-y-1/2 z-30">
       <div class="w-px h-16 bg-white/30"></div>
 
-      <a href="https://www.instagram.com/achomunodisa/?hl=en" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fab fa-instagram fa-3x"></i>
+      <a href="https://www.instagram.com/achomunodisa/?hl=en" target="_blank" class="social-icon">
+        <i class="fab fa-instagram fa-2x"></i>
       </a>
 
-      <a href="https://x.com/chomunodisaa68" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fab fa-twitter fa-3x"></i>
+      <a href="https://x.com/chomunodisaa68" target="_blank" class="social-icon">
+        <i class="fab fa-twitter fa-2x"></i>
       </a>
 
-      <a href="https://www.facebook.com/TakuInnovations" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fab fa-facebook fa-3x"></i>
+      <a href="https://www.facebook.com/TakuInnovations" target="_blank" class="social-icon">
+        <i class="fab fa-facebook fa-2x"></i>
       </a>
 
-      <a href="https://wa.me/263780488779" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fab fa-whatsapp fa-3x"></i>
+      <a href="https://wa.me/263780488779" target="_blank" class="social-icon">
+        <i class="fab fa-whatsapp fa-2x"></i>
       </a>
 
-      <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fas fa-envelope fa-3x"></i>
+      <a href="mailto:takunda@example.com" target="_blank" class="social-icon">
+        <i class="fas fa-envelope fa-2x"></i>
       </a>
 
-      <a href="https://www.linkedin.com/in/abel-chomunodisa-765280270/" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fab fa-linkedin fa-3x"></i>
+      <a href="https://www.linkedin.com/in/abel-chomunodisa-765280270/" target="_blank" class="social-icon">
+        <i class="fab fa-linkedin fa-2x"></i>
       </a>
 
-      <a href="https://github.com/Sparta503" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fab fa-github fa-3x"></i>
+      <a href="https://github.com/Sparta503" target="_blank" class="social-icon">
+        <i class="fab fa-github fa-2x"></i>
       </a>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import heroBg from '../../assets/Heroo.png'
-import profileImg from '../../assets/pro.jpeg'
+import heroBg from '@/assets/Heroo.png'
+import profileImg from '@/assets/pro.jpeg'
 </script>
 
 <style scoped>
@@ -131,9 +159,19 @@ import profileImg from '../../assets/pro.jpeg'
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* LEFT SIDE FADE */
+.left-side {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
 /* SOCIAL ICONS */
 .social-icon {
-  font-size: 18px;
   color: white;
   opacity: 0.7;
   transition: all 0.3s ease;
@@ -144,12 +182,11 @@ import profileImg from '../../assets/pro.jpeg'
   color: #3b82f6;
 }
 
-/* WAVING HAND ANIMATION */
+/* WAVING HAND */
 .wave-hand {
   display: inline-block;
   transform-origin: 70% 70%;
   animation: wave 1.5s infinite ease-in-out;
-  position: relative;
 }
 
 @keyframes wave {
@@ -161,39 +198,5 @@ import profileImg from '../../assets/pro.jpeg'
   75% { transform: rotate(10deg); }
   100% { transform: rotate(0deg); }
 }
-
-/* TRAILS FOR HAND */
-.wave-hand::before,
-.wave-hand::after {
-  content: '👋';
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.3;
-  pointer-events: none;
-  animation: wave-trail 1.2s ease-in-out infinite;
-}
-.wave-hand::after {
-  opacity: 0.15;
-  animation-delay: 0.1s;
-}
-
-@keyframes wave-trail {
-  0% { transform: rotate(0deg) translateX(0); opacity: 0.3; }
-  50% { transform: rotate(20deg) translateX(2px); opacity: 0.15; }
-  100% { transform: rotate(0deg) translateX(0); opacity: 0.3; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-anim {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-  .wave-hand,
-  .wave-hand::before,
-  .wave-hand::after {
-    animation: none;
-  }
-}
 </style>
+
