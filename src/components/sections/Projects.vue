@@ -92,7 +92,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Hospital Mobile Application",
+    title: "React Native Mobile Application",
     description: "A mobile app designed to streamline hospital services, including patient management, appointments, and real-time communication.",
     image: img1,
     link: "https://github.com/Sparta503/hospital-mobile-app"
