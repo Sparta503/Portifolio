@@ -157,6 +157,9 @@ import {
   Database,
   Github,
   Box,
+  coffee,
+  Layers,
+  AppWindow,
   Cloud
 } from 'lucide-vue-next'
 
