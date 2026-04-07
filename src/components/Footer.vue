@@ -33,16 +33,16 @@
         <!-- Socials -->
         <div class="flex items-center gap-8 text-3xl">
           
-          <a href="https://wa.me/263780488779" target="_blank" rel="noopener noreferrer" class="inline-flex opacity-80 hover:opacity-100 hover:text-white hover:-translate-y-0.5 transition-all duration-200" aria-label="WhatsApp">
+          <a href="https://wa.me/263780488779" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white text-purple-600 opacity-90 hover:opacity-100 hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-200" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
           </a>
-          <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank" rel="noopener noreferrer" class="inline-flex opacity-80 hover:opacity-100 hover:text-white hover:-translate-y-0.5 transition-all duration-200" aria-label="Email">
+          <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white text-purple-600 opacity-90 hover:opacity-100 hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-200" aria-label="Email">
             <i class="fas fa-envelope"></i>
           </a>
-          <a href="https://www.linkedin.com/in/abel-chomunodisa-765280270/" target="_blank" rel="noopener noreferrer" class="inline-flex opacity-80 hover:opacity-100 hover:text-white hover:-translate-y-0.5 transition-all duration-200" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/abel-chomunodisa-765280270/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white text-purple-600 opacity-90 hover:opacity-100 hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-200" aria-label="LinkedIn">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="https://github.com/Sparta503" target="_blank" rel="noopener noreferrer" class="inline-flex opacity-80 hover:opacity-100 hover:text-white hover:-translate-y-0.5 transition-all duration-200" aria-label="GitHub">
+          <a href="https://github.com/Sparta503" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white text-purple-600 opacity-90 hover:opacity-100 hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-200" aria-label="GitHub">
             <i class="fab fa-github"></i>
           </a>
         </div>
