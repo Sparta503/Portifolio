@@ -15,8 +15,12 @@
           My approach combines creativity and technical expertise to deliver
           solutions that are visually appealing and highly functional.
         </p>
-        <a>
-  
+        <a
+          href="https://wa.me/263780488779"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Say Hello on WhatsApp"
+        >
           <button class="bg-purple-500 hover:bg-purple-600 px-6 py-3 rounded-lg shadow-lg transition">
             Say Hello!
           </button>
