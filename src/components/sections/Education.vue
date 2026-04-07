@@ -157,7 +157,7 @@ import {
   Database,
   Github,
   Box,
-  coffee,
+  Coffee,
   Layers,
   AppWindow,
   Cloud
