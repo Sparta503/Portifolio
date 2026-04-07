@@ -14,10 +14,9 @@
     <!-- LEFT SIDE CONTACT (NEW) -->
     <div class="hidden md:flex flex-col items-center absolute left-6 top-1/2 -translate-y-1/2 z-30 left-side">
 
-      <!-- Email -->
-      <div class="rotate-[-90deg] text-sm tracking-widest text-white/70">
-        Chomunodisaa68@gmail.com
-      </div>
+     <div class="rotate-[-90deg] text-lg md:text-xl font-semibold tracking-[0.2em] text-white/80 hover:text-white transition-all duration-300">
+  Chomunodisaa68@gmail.com
+   </div>
 
     </div>
 
@@ -96,23 +95,23 @@
       </a>
 
       <a href="https://www.facebook.com/TakuInnovations" target="_blank" class="social-icon">
-        <i class="fab fa-facebook fa-2x"></i>
+        <i class="fab fa-facebook fa-3x"></i>
       </a>
 
       <a href="https://wa.me/263780488779" target="_blank" class="social-icon">
-        <i class="fab fa-whatsapp fa-2x"></i>
+        <i class="fab fa-whatsapp fa-3x"></i>
       </a>
 
       <a href="mailto:takunda@example.com" target="_blank" class="social-icon">
-        <i class="fas fa-envelope fa-2x"></i>
+        <i class="fas fa-envelope fa-3x"></i>
       </a>
 
       <a href="https://www.linkedin.com/in/abel-chomunodisa-765280270/" target="_blank" class="social-icon">
-        <i class="fab fa-linkedin fa-2x"></i>
+        <i class="fab fa-linkedin fa-3x"></i>
       </a>
 
       <a href="https://github.com/Sparta503" target="_blank" class="social-icon">
-        <i class="fab fa-github fa-2x"></i>
+        <i class="fab fa-github fa-3x"></i>
       </a>
     </div>
   </section>
