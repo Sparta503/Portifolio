@@ -9,7 +9,7 @@
           <article
             v-for="item in education"
             :key="item.school + item.program"
-            class="bg-gray-800/60 border border-white/5 rounded-xl p-6"
+            class="bg-gray-800/60 border border-white/5 rounded-xl p-6 hover:-translate-y-1 hover:bg-gray-800/70 hover:shadow-lg transition-all duration-200"
           >
             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
               <div>
@@ -39,9 +39,9 @@
       <div id="education-categories" class="scroll-mt-28">
         <h3 class="text-2xl font-bold mb-6">Categories</h3>
         <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          <a href="#education-all-posts" class="bg-gray-800/60 border border-white/5 rounded-xl px-5 py-4 hover:bg-gray-800/80 transition-colors duration-200">Education</a>
-          <a href="#education-all-posts" class="bg-gray-800/60 border border-white/5 rounded-xl px-5 py-4 hover:bg-gray-800/80 transition-colors duration-200">Certifications</a>
-          <a href="#education-all-posts" class="bg-gray-800/60 border border-white/5 rounded-xl px-5 py-4 hover:bg-gray-800/80 transition-colors duration-200">Projects</a>
+          <a href="#education-all-posts" class="bg-gray-800/60 border border-white/5 rounded-xl px-5 py-4 hover:bg-gray-800/80 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">Education</a>
+          <a href="#education-all-posts" class="bg-gray-800/60 border border-white/5 rounded-xl px-5 py-4 hover:bg-gray-800/80 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">Certifications</a>
+          <a href="#education-all-posts" class="bg-gray-800/60 border border-white/5 rounded-xl px-5 py-4 hover:bg-gray-800/80 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">Projects</a>
         </div>
       </div>
     </div>
