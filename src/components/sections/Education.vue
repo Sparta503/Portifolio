@@ -51,11 +51,11 @@
           <div class="bg-gray-800/60 border border-white/5 rounded-xl p-5 hover:bg-gray-800/80 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
             <div class="flex items-center gap-3 mb-3">
               <Newspaper class="w-6 h-6 text-blue-400" />
-              <h4 class="font-semibold text-lg">Current Focus</h4>
+              <h4 class="font-semibold text-lg">Dev MindSet</h4>
             </div>
             <p class="text-gray-300 text-sm leading-relaxed">
-              Currently pursuing Cloud Computing & IoT while building AI systems,
-              mobile apps, and scalable backend solutions.
+              I focus on more than code and design,
+              I build solutions that solve real-world problems.
             </p>
           </div>
 
@@ -179,7 +179,7 @@ const education: EducationItem[] = [
     program: 'B.Sc. Cloud Computing And Internet Of Things',
     location: 'Harare, Zimbabwe',
     start: '2023',
-    end: '2026',
+    end: '2027',
     details:
       'Focused on cloud systems, IoT, and software development while building real-world AI and mobile solutions.',
     highlights: [
