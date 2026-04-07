@@ -74,12 +74,12 @@
 </template>
 
 <script setup lang="ts">
-import img1 from "../assets/hospital-mobile.png"
-import img2 from "../assets/facebook-markting.png"
-import img3 from "../assets/hospital-mnagement.png"
-import img4 from "../assets/device-tracker.png"
-import img5 from "../assets/hospital-advertisement.png"
-import img6 from "../assets/school-management.png"
+import img1 from "./../assets/hospital-mobile.png"
+import img2 from "./../assets/facebook-markting.png"
+import img3 from "./../assets/hospital-mnagement.png"
+import img4 from "./../assets/device-tracker.png"
+import img5 from "./../assets/hospital-advertisement.png"
+import img6 from "./../assets/school-management.png"
 
 interface Project {
   title: string
