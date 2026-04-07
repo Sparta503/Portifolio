@@ -15,26 +15,13 @@
     <div class="hidden md:flex flex-col items-center absolute left-6 top-1/2 -translate-y-1/2 z-30 left-side">
 
       <!-- Phone -->
-      <div class="rotate-[-90deg] text-sm tracking-widest text-white/70 mb-20">
+      <div class="rotate-[-90deg] text-sm tracking-widest text-white/70 mb-28">
         +263 780 488 779
       </div>
 
       <!-- Email -->
-      <div class="rotate-[-90deg] text-sm tracking-widest text-white/70 mb-20">
+      <div class="rotate-[-90deg] text-sm tracking-widest text-white/70">
         takunda@example.com
-      </div>
-
-      <!-- Divider -->
-      <div class="w-px h-20 bg-white/30"></div>
-
-      <!-- Scroll Text -->
-      <div class="rotate-[-90deg] text-xs tracking-[0.3em] text-white/50 mt-16">
-        SCROLL DOWN
-      </div>
-
-      <!-- Arrow -->
-      <div class="mt-6 text-white/50 animate-bounce">
-        ↓
       </div>
 
     </div>
