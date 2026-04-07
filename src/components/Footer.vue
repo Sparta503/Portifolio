@@ -17,9 +17,16 @@
         <div class="text-center md:text-left text-lg text-gray-200">
           <p class="font-semibold mb-4">Contact</p>
           <div class="grid gap-2">
-            <p class="text-gray-400">Harare, Zimbabwe</p>
             <a href="mailto:Chomunodisaa68@gmail.com" class="inline-flex items-center justify-center md:justify-start text-gray-300 hover:text-white hover:-translate-y-0.5 transition-all duration-200">Chomunodisaa68@gmail.com</a>
             <a href="tel:+263780488779" class="inline-flex items-center justify-center md:justify-start text-gray-300 hover:text-white hover:-translate-y-0.5 transition-all duration-200">+263 780 48 8779</a>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="text-center md:text-left text-lg text-gray-200">
+          <p class="font-semibold mb-4">Location</p>
+          <div class="grid gap-2">
+            <p class="text-gray-400">Harare, Zimbabwe</p>
           </div>
         </div>
 
