@@ -78,10 +78,10 @@
 // ✅ Use @ alias (Vite standard)
 import img1 from "@/assets/Hospital mobile.png"
 import img2 from "@/assets/facebook markting.png"
-import img3 from "@/assets/hospital mnagement.png"
+import img3 from "@/assets/Hospital Mnagement.png"
 import img4 from "@/assets/DeviceTracker.png"
-import img5 from "@/assets/hospital advertisement.png"
-import img6 from "@/assets/school management.png"
+import img5 from "@/assets/Hospital advertisement.png"
+import img6 from "@/assets/School management.png"
 
 interface Project {
   title: string
