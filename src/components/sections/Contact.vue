@@ -3,7 +3,7 @@
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
       <!-- LEFT SIDE (FORM) -->
-      <div class="bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-10 border border-gray-800">
+      <div class="bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-10 border border-gray-800 hover:-translate-y-1 hover:shadow-3xl transition-all duration-200">
         <h2 class="text-2xl font-bold mb-6">Send a Message</h2>
         <form @submit.prevent="handleSubmit" class="grid gap-5">
           <input 
