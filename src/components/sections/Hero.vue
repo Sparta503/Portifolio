@@ -27,7 +27,7 @@
         <!-- LEFT TEXT -->
         <div class="flex flex-col justify-center md:max-w-xl">
           <p class="text-lg md:text-xl text-white/80 tracking-widest hero-anim hero-anim-1">
-            Hi there! <span class="wave-hand relative inline-block" style="font-size: 3rem;">👋</span> I’m Takunda Chomunodisa
+            Hi there! <span class="wave-hand relative inline-block" style="font-size: 3rem;">👋</span> I’m ABEL CHOMUNODISA
           </p>
 
           <h1 class="mt-4 leading-none hero-anim hero-anim-2">
@@ -35,7 +35,7 @@
               CREATIVE
             </span>
             <span class="block text-5xl md:text-7xl font-semibold italic tracking-tight">
-              MIND SETS AND DEVELOPER
+              MIND SET AND FULL STACK DEVELOPER
             </span>
           </h1>
 
@@ -45,7 +45,7 @@
           </div>
 
           <p class="mt-6 text-base md:text-lg text-white/75 max-w-xl hero-anim hero-anim-4">
-            I build modern, scalable web and mobile applications with clean UI and a strong focus on user experience.
+          I Build Scalable Web and Mobile Apps with clean UI, while Leveraging Cloud Services, Data Pipelines, and Machine Learning to deliver High-Performance Solutions.
           </p>
 
           <!-- BUTTONS -->
