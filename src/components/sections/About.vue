@@ -28,21 +28,20 @@
         <!-- RIGHT: Content -->
         <div class="mt-4 md:mt-0">
           <h2 class="text-3xl md:text-4xl font-bold text-blue-950 leading-snug">
-            I am a Software Developer
+            A FULL STACK SOFTWARE DEVELOPER
           </h2>
 
-          <p class="mt-4 text-xl leading-relaxed">
-            As a creative and innovative software developer with 5years of Experience, I am passionate about designing and developing
-            cutting-edge web and mobile applications that cater to the needs of users. My expertise lies in leveraging modern
-            technologies to create efficient and scalable solutions, always striving to deliver exceptional user
-            experiences.
-          </p>
+         <p class="mt-4 text-xl leading-relaxed">
+           Creative Software Developer with 5+ years of experience building scalable web and mobile applications, focused on clean UI and strong user experience.<br>
+           
+           Skilled in Modern Technologies, Cloud Services, Data Pipelines, and Machine Learning to deliver efficient solutions.
+         </p>
 
-          <p class="mt-4 text-xl leading-relaxed">
-            I thrive in a dynamic environment, continuously pushing the boundaries of what is possible. I am
-            committed to staying up-to-date with the latest trends and advancements in the industry, ensuring that my
-            projects are built with the latest technologies and best practices.
-          </p>
+         <p class="mt-4 text-xl leading-relaxed">
+         Thrives in Dynamic Environments and continuously adapts to new Technologies and Industry Trends.<br>
+        
+         Committed to applying Best Practices to build high-quality, reliable, and Future-Ready Applications.
+         </p>
 
           <!-- Buttons -->
           <div class="mt-6 flex gap-4">
