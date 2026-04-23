@@ -25,6 +25,19 @@
               alt="project"
               class="absolute bottom-0 left-0 w-full h-full object-cover"
             />
+
+            <div class="absolute inset-x-0 -bottom-4 flex justify-center">
+              <div class="flex flex-wrap justify-center gap-2 px-4">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Stack →</span>
+                <span
+                  v-for="lang in project.languages"
+                  :key="lang"
+                  class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs"
+                >
+                  {{ lang }}
+                </span>
+              </div>
+            </div>
           </div>
 
           <!-- CONTENT -->
@@ -88,44 +101,51 @@ interface Project {
   description: string
   image: string
   link: string
+  languages: string[]
 }
 
 const projects: Project[] = [
   {
-    title: "React Native Mobile Application",
+    title: " Mobile Services Hospital Application",
     description: "A mobile app designed to streamline hospital services, including patient management, appointments, and real-time communication.",
     image: img1,
-    link: "https://github.com/Sparta503/hospital-mobile-app"
+    link: "https://github.com/Sparta503/hospital-mobile-app",
+    languages: ["React Native", "Expo", "Firebase"]
   },
   {
     title: "Peer-to-Peer Web Application",
     description: "A decentralized web platform enabling secure peer-to-peer interactions and seamless data exchange between users.",
     image: img2,
-    link: "https://github.com/Sparta503/p2p-web-app"
+    link: "https://github.com/Sparta503/p2p-web-app",
+    languages: ["Next.js", "Node.js", "MongoDB"]
   },
   {
     title: "Role-Based Hospital Management System",
     description: "A full-stack system with role-based access control for managing hospital operations, staff, and patient workflows.",
     image: img3,
-    link: "https://github.com/Sparta503/hospital-management-system"
+    link: "https://github.com/Sparta503/hospital-management-system",
+    languages: ["React",  "Java","MongoDB"]
   },
   {
     title: "Device Tracking Web & Mobile Application",
     description: "A cross-platform solution for tracking devices in real-time with location monitoring and reporting features.",
     image: img4,
-    link: "https://github.com/Sparta503/device-tracking-app"
+    link: "https://github.com/Sparta503/device-tracking-app",
+    languages: ["React", "React Native","Firebase"]
   },
   {
     title: "Brand Advertisement Web Application",
     description: "A dynamic platform for managing and showcasing brand campaigns with engaging UI and analytics support.",
     image: img5,
-    link: "https://advertisement-hub-git-main-sparta503s-projects.vercel.app/"
+    link: "https://advertisement-hub-git-main-sparta503s-projects.vercel.app/",
+    languages: ["Angular", "Tailwind CSS"]
   },
   {
     title: "School Management System",
     description: "A comprehensive system for handling student records, academic processes, and administrative tasks efficiently.",
     image: img6,
-    link: "https://github.com/Sparta503/school-management-system"
+    link: "https://github.com/Sparta503/school-management-system",
+    languages: ["React", "Tailwind CSS", "Node.js"]
   }
 ]
 
