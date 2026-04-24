@@ -34,47 +34,50 @@
       <div class="space-y-6">
 
         <!-- CARD -->
-        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-md border-l-4 border-purple-500 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-md border-l-4 border-purple-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-red-500/60 hover:ring-2 hover:ring-red-500/40 transition-all duration-200">
           <h3 class="font-semibold text-lg mb-2">Frontend</h3>
           <div class="flex flex-wrap gap-2 text-base">
             <span class="bg-black text-white px-3 py-1 rounded-full">Vue.js</span>
             <span class="bg-black text-white px-3 py-1 rounded-full">React</span>
             <span class="bg-black text-white px-3 py-1 rounded-full">Next.js</span>
             <span class="bg-black text-white px-3 py-1 rounded-full">Angular</span>
-            <span class="bg-black text-white px-3 py-1 rounded-full">JavaScript</span>
+            <span class="bg-black text-white px-3 py-1 rounded-full">HTML + PHP</span>
           </div>
         </div>
 
         <!-- CARD -->
-        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-md border-l-4 border-purple-500 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-md border-l-4 border-purple-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-red-500/60 hover:ring-2 hover:ring-red-500/40 transition-all duration-200">
           <h3 class="font-semibold text-lg mb-2">Backend</h3>
           <div class="flex flex-wrap gap-2 text-base">
-            <span class="bg-black text-white px-3 py-1 rounded-full">Node.js</span>
+            <span class="bg-black text-white px-3 py-1 rounded-full">Laravel</span>
             <span class="bg-black text-white px-3 py-1 rounded-full">Java</span>
             <span class="bg-black text-white px-3 py-1 rounded-full">Python</span>
+            <span class="bg-black text-white px-3 py-1 rounded-full">Django</span>
             <span class="bg-black text-white px-3 py-1 rounded-full">Database Design</span>
           </div>
         </div>
 
         <!-- CARD -->
-        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-md border-l-4 border-purple-500 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-md border-l-4 border-purple-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-red-500/60 hover:ring-2 hover:ring-red-500/40 transition-all duration-200">
           <h3 class="font-semibold text-lg mb-2">Mobile Development</h3>
           <div class="flex flex-wrap gap-2 text-base">
             <span class="bg-black text-white px-3 py-1 rounded-full">React Native</span>
             <span class="bg-black text-white px-3 py-1 rounded-full">Flutter</span>
             <span class="bg-black text-white px-3 py-1 rounded-full">Dart</span>
+            <span class="bg-black text-white px-3 py-1 rounded-full">Figma</span>
+            <span class="bg-black text-white px-3 py-1 rounded-full">Ionic</span>
           </div>
         </div>
 
         <!-- CARD -->
-        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-md border-l-4 border-purple-500 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+        <div class="bg-white text-gray-800 p-6 rounded-xl shadow-md border-l-4 border-purple-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-red-500/60 hover:ring-2 hover:ring-red-500/40 transition-all duration-200">
           <h3 class="font-semibold text-lg mb-2">Other Technologies</h3>
           <div class="flex flex-wrap gap-2 text-base">
-            <span class="bg-black text-white px-3 py-1 rounded-full">Git</span>
-            <span class="bg-black text-white px-3 py-1 rounded-full">GitHub</span>
-            <span class="bg-black text-white px-3 py-1 rounded-full">Docker</span>
-            <span class="bg-black text-white px-3 py-1 rounded-full">Postman</span>
-            <span class="bg-black text-white px-3 py-1 rounded-full">Cloud Deployment</span>
+            <span class="bg-black text-white px-3 py-1 rounded-full">Cloud Security and Monitoring</span>
+            <span class="bg-black text-white px-3 py-1 rounded-full">Wordpress</span>
+            <span class="bg-black text-white px-3 py-1 rounded-full">CI/CD</span>
+            <span class="bg-black text-white px-3 py-1 rounded-full">Data Modelling and Pipelining</span>
+
           </div>
         </div>
 
