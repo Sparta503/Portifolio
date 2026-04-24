@@ -3,8 +3,9 @@
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
       <!-- LEFT SIDE (FORM) -->
-      <div class="bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-10 border border-gray-800 hover:-translate-y-1 hover:shadow-3xl transition-all duration-200">
+      <div class="form-card bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-10 border border-gray-800">
         <h2 class="text-2xl font-bold mb-6">Send a Message</h2>
+
         <form @submit.prevent="handleSubmit" class="grid gap-5">
           <input 
             v-model="name"
@@ -12,18 +13,21 @@
             placeholder="Your Name"
             class="w-full p-4 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+
           <input 
             v-model="email"
             type="email" 
             placeholder="Your Email"
             class="w-full p-4 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+
           <textarea 
             v-model="message"
             rows="5"
             placeholder="Your Message"
             class="w-full p-4 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
           ></textarea>
+
           <button 
             type="submit"
             class="bg-blue-600 hover:bg-blue-700 py-3 rounded-xl font-semibold transition shadow-lg"
@@ -41,6 +45,7 @@
     </div>
   </section>
 </template>
+
 <script setup lang="ts">
 import { ref, onMounted } from "vue"
 import * as THREE from "three"
@@ -60,7 +65,7 @@ const handleSubmit = () => {
   message.value = ""
 }
 
-// ================= 3D SPHERE =================
+// ================= 3D SPHERE (UNCHANGED) =================
 const canvasContainer = ref<HTMLDivElement | null>(null)
 
 onMounted(() => {
@@ -81,7 +86,6 @@ onMounted(() => {
   renderer.setPixelRatio(window.devicePixelRatio)
   canvasContainer.value.appendChild(renderer.domElement)
 
-  // 🌍 MAIN SPHERE (more realistic)
   const sphereGeo = new THREE.SphereGeometry(1, 64, 64)
   const sphereMat = new THREE.MeshStandardMaterial({
     color: "#8b5cf6",
@@ -91,7 +95,6 @@ onMounted(() => {
   const sphere = new THREE.Mesh(sphereGeo, sphereMat)
   scene.add(sphere)
 
-  // ✨ GLOW
   const glowGeo = new THREE.SphereGeometry(1.05, 64, 64)
   const glowMat = new THREE.MeshBasicMaterial({
     color: "#c084fc",
@@ -101,7 +104,6 @@ onMounted(() => {
   const glow = new THREE.Mesh(glowGeo, glowMat)
   scene.add(glow)
 
-  // 🌀 ORBITS
   const rings: THREE.Mesh[] = []
   const colors = ["#22d3ee", "#f472b6", "#facc15", "#a3e635"]
   const ringTilts = [-0.55, -0.18, 0.18, 0.55]
@@ -140,7 +142,6 @@ onMounted(() => {
     rings.push(ring)
   }
 
-  // ✨ PARTICLES (stars around sphere)
   const particlesGeometry = new THREE.BufferGeometry()
   const particlesCount = 800
 
@@ -160,13 +161,9 @@ onMounted(() => {
     color: "#ffffff"
   })
 
-  const particlesMesh = new THREE.Points(
-    particlesGeometry,
-    particlesMaterial
-  )
+  const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial)
   scene.add(particlesMesh)
 
-  // 💡 LIGHTS
   const light1 = new THREE.PointLight("#ffffff", 1.5)
   light1.position.set(5, 5, 5)
 
@@ -175,7 +172,6 @@ onMounted(() => {
 
   scene.add(light1, light2)
 
-  // 🖱️ MOUSE INTERACTION
   let isDragging = false
   let previousMousePosition = { x: 0, y: 0 }
 
@@ -204,7 +200,6 @@ onMounted(() => {
     }
   })
 
-  // 🎬 ANIMATION
   const animate = () => {
     requestAnimationFrame(animate)
 
@@ -236,7 +231,6 @@ onMounted(() => {
 
   animate()
 
-  // 📱 RESPONSIVE
   window.addEventListener("resize", () => {
     if (!canvasContainer.value) return
 
@@ -248,3 +242,26 @@ onMounted(() => {
   })
 })
 </script>
+
+<!-- ✅ FIXED STYLE (moved OUT of script) -->
+<style scoped>
+.form-card {
+  transform-style: preserve-3d;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* 💎 PREMIUM HOVER */
+.form-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(59,130,246,0.45);
+
+  box-shadow:
+    0 28px 70px rgba(0,0,0,0.6),
+    0 0 25px rgba(59,130,246,0.35),
+    0 0 18px rgba(139,92,246,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+</style>
