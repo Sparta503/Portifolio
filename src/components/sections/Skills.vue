@@ -53,7 +53,7 @@
             <span class="bg-black text-white px-3 py-1 rounded-full">Java</span>
             <span class="bg-black text-white px-3 py-1 rounded-full">Python</span>
             <span class="bg-black text-white px-3 py-1 rounded-full">Django</span>
-            <span class="bg-black text-white px-3 py-1 rounded-full">Database Design</span>
+            <span class="bg-black text-white px-3 py-1 rounded-full">PostgreSQL</span>
           </div>
         </div>
 
