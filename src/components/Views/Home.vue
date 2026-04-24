@@ -18,6 +18,6 @@ import Projects from '../sections/Projects.vue'
 import Skills from '../sections/Skills.vue'
 import Experience from '../sections/Experience.vue'
 import Education from  '../sections/Education.vue'
-import Achievements from '../sections/Achievements.vue'
+import Achievements from '../sections/Pricing.vue'
 import Contact from '../sections/Contact.vue'
 </script>
