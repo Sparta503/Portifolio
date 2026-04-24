@@ -26,18 +26,25 @@
               class="absolute bottom-0 left-0 w-full h-full object-cover"
             />
 
+            <!-- STACK ROW -->
             <div class="absolute inset-x-0 -bottom-4 flex justify-center">
-              <div class="flex flex-wrap justify-center gap-2 px-4">
-                <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Stack →</span>
+              <div class="flex flex-wrap justify-center gap-1 px-2 max-w-full">
+
+                <span class="glass-pill font-semibold shrink-0">
+                  Stack →
+                </span>
+
                 <span
                   v-for="lang in project.languages"
                   :key="lang"
-                  class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs"
+                  class="glass-pill shrink-0"
                 >
                   {{ lang }}
                 </span>
+
               </div>
             </div>
+
           </div>
 
           <!-- CONTENT -->
@@ -56,7 +63,8 @@
               </span>
             </h3>
 
-            <p class="text-base text-gray-600 mb-4 line-clamp-4">
+            <!-- 🔥 FIXED GLASS PARAGRAPH (VISIBLE AGAIN) -->
+            <p class="glass-text mb-4 line-clamp-4">
               {{ project.description }}
             </p>
 
@@ -105,7 +113,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Mobile Services Hospital Application",
-    description: "A mobile app designed to streamline hospital services, including patient management, appointments, and real-time communication.",
+    description: "A mobile app designed to streamline hospital services, including patient management, appointments, and real-time...",
     image: img1,
     link: "https://github.com/Sparta503/hospital-mobile-app",
     languages: ["React Native", "Expo", "Firebase"]
@@ -149,47 +157,101 @@ const projects: Project[] = [
 </script>
 
 <style scoped>
-/* 🌊 PREMIUM PROJECT CARD (soft pricing-style hover) */
+/* PROJECT CARD */
 .project-card {
   background: white;
   border-radius: 16px;
   overflow: hidden;
-
   transform: perspective(1200px) translateY(0px);
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-/* 🚀 soft lift + glow */
 .project-card:hover {
   transform: translateY(-12px) scale(1.05);
-
   box-shadow:
     0 25px 60px rgba(0,0,0,0.45),
     0 0 25px rgba(59,130,246,0.35);
 }
 
-/* 🔘 case study button */
+/* 🔮 STRONG GLASS TEXT (FIXED VISIBILITY) */
+.glass-text {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(37, 99, 235, 0.28)
+  );
+
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  border-radius: 16px;
+
+  padding: 18px 20px;
+
+  color: rgba(15, 23, 42, 0.85);
+
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.28),
+    0 0 40px rgba(37, 99, 235, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+  transition: all 0.4s ease;
+}
+
+.glass-text:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.38),
+    0 0 55px rgba(37, 99, 235, 0.55);
+}
+
+/* GLASS PILL */
+.glass-pill {
+  padding: 5px 10px;
+  border-radius: 9999px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(37, 99, 235, 0.22)
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  font-size: 0.72rem;
+  color: rgba(0, 0, 0, 0.75);
+
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.15),
+    0 0 15px rgba(37,99,235,0.25);
+
+  transition: all 0.3s ease;
+}
+
+.glass-pill:hover {
+  transform: translateY(-3px) scale(1.06);
+}
+
+/* BUTTONS */
 .case-btn {
   padding: 12px 16px;
   border-radius: 10px;
   background: #3b82f6;
   color: white;
   transition: all 0.3s ease;
-  box-shadow: 0 0 0 transparent;
 }
 
-/* glow hover */
 .case-btn:hover {
   transform: translateY(-4px) scale(1.05);
-  box-shadow:
-    0 0 20px rgba(59,130,246,0.6),
-    0 10px 25px rgba(0,0,0,0.25);
-  background: #2563eb;
+  box-shadow: 0 0 20px rgba(59,130,246,0.6);
 }
 
-/* 🔵 bottom button */
 .more-btn {
   background: black;
   padding: 12px 18px;
@@ -198,7 +260,6 @@ const projects: Project[] = [
   display: inline-block;
 }
 
-/* glow hover */
 .more-btn:hover {
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 0 25px rgba(0,0,0,0.6);
