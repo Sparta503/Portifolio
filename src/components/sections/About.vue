@@ -56,7 +56,21 @@
           <!-- BUTTONS -->
           <div class="mt-6 flex gap-4">
             <a href="#projects" class="glow-btn">⬇ My Projects</a>
-            <a href="/Abel_Chomunodisa_Resume.pdf" class="glow-btn" @click.prevent="downloadCv">⬇ Download CV</a>
+            <a
+              href="/Abel_Chomunodisa_Resume.pdf"
+              class="glow-btn"
+              @click.prevent="downloadCv"
+              :aria-disabled="isDownloading ? 'true' : 'false'"
+              :class="{ 'btn-disabled': isDownloading }"
+            >
+              <span v-if="isDownloading" class="btn-row">
+                <span class="spinner" aria-hidden="true"></span>
+                Downloading...
+              </span>
+              <span v-else>
+                {{ isDownloaded ? '✅ Downloaded' : '⬇ Download CV' }}
+              </span>
+            </a>
           </div>
         </div>
 
@@ -95,29 +109,44 @@
 import { ref, onMounted } from "vue"
 import tkayLogo from "../../assets/tkay.png"
 
+const isDownloading = ref(false)
+const isDownloaded = ref(false)
+
 const downloadCv = async () => {
+  if (isDownloading.value) return
+
+  isDownloading.value = true
+  isDownloaded.value = false
   const url = "/Abel_Chomunodisa_Resume.pdf"
 
-  const res = await fetch(url)
-  if (!res.ok) throw new Error("Failed to download CV")
+  try {
+    const res = await fetch(url)
+    if (!res.ok) throw new Error("Failed to download CV")
 
-  const contentType = res.headers.get("content-type") || ""
-  if (!contentType.includes("pdf")) {
-    throw new Error("CV file was not served as a PDF. Check that the file exists in /public and the URL is correct.")
+    const contentType = res.headers.get("content-type") || ""
+    if (!contentType.includes("pdf")) {
+      throw new Error("CV file was not served as a PDF. Check that the file exists in /public and the URL is correct.")
+    }
+
+    const buffer = await res.arrayBuffer()
+    const blob = new Blob([buffer], { type: "application/pdf" })
+    const objectUrl = URL.createObjectURL(blob)
+
+    const link = document.createElement("a")
+    link.href = objectUrl
+    link.download = "Abel_Chomunodisa_Resume.pdf"
+    document.body.appendChild(link)
+    link.click()
+    link.remove()
+
+    URL.revokeObjectURL(objectUrl)
+    isDownloaded.value = true
+    window.setTimeout(() => {
+      isDownloaded.value = false
+    }, 2500)
+  } finally {
+    isDownloading.value = false
   }
-
-  const buffer = await res.arrayBuffer()
-  const blob = new Blob([buffer], { type: "application/pdf" })
-  const objectUrl = URL.createObjectURL(blob)
-
-  const link = document.createElement("a")
-  link.href = objectUrl
-  link.download = "Abel_Chomunodisa_Resume.pdf"
-  document.body.appendChild(link)
-  link.click()
-  link.remove()
-
-  URL.revokeObjectURL(objectUrl)
 }
 
 const statsRef = ref<HTMLElement | null>(null)
@@ -207,6 +236,30 @@ section::before {
   box-shadow:
     0 20px 50px rgba(37, 99, 235, 0.65),
     0 0 40px rgba(37, 99, 235, 0.45);
+}
+
+.btn-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  animation: spin 0.9s linear infinite;
+}
+
+.btn-disabled {
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .info-card {
