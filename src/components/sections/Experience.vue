@@ -26,13 +26,23 @@
               <div
                 class="w-full max-w-md bg-white text-gray-800 p-6 rounded-xl shadow-lg
                        transition-all duration-300 ease-out
-                       hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/20
-                       hover:scale-[1.02]"
+                       hover:scale-[1.06] hover:shadow-2xl hover:shadow-red-500/80
+                       hover:ring-4 hover:ring-red-500/50"
               >
                 <h3 class="text-lg font-semibold">{{ item.role }}</h3>
                 <p class="text-sm text-gray-500 mb-2">
                   {{ item.company }} • {{ item.start }} - {{ item.end }}
                 </p>
+
+                <div v-if="item.tools?.length" class="flex flex-wrap gap-2 mb-3">
+                  <span
+                    v-for="tool in item.tools"
+                    :key="tool"
+                    class="bg-black text-white px-3 py-1 rounded-full text-xs"
+                  >
+                    {{ tool }}
+                  </span>
+                </div>
 
                 <ul class="text-sm text-gray-600 space-y-1">
                   <li v-for="point in item.highlights" :key="point">
@@ -58,13 +68,23 @@
               <div
                 class="w-full max-w-md bg-white text-gray-800 p-6 rounded-xl shadow-lg
                        transition-all duration-300 ease-out
-                       hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/20
-                       hover:scale-[1.02]"
+                       hover:scale-[1.06] hover:shadow-2xl hover:shadow-red-500/80
+                       hover:ring-4 hover:ring-red-500/50"
               >
                 <h3 class="text-lg font-semibold">{{ item.role }}</h3>
                 <p class="text-sm text-gray-500 mb-2">
                   {{ item.company }} • {{ item.start }} - {{ item.end }}
                 </p>
+
+                <div v-if="item.tools?.length" class="flex flex-wrap gap-2 mb-3">
+                  <span
+                    v-for="tool in item.tools"
+                    :key="tool"
+                    class="bg-black text-white px-3 py-1 rounded-full text-xs"
+                  >
+                    {{ tool }}
+                  </span>
+                </div>
 
                 <ul class="text-sm text-gray-600 space-y-1">
                   <li v-for="point in item.highlights" :key="point">
@@ -92,30 +112,35 @@ type ExperienceItem = {
   start: string
   end: string
   highlights: string[]
+  tools?: string[]
 }
 
 const experience: ExperienceItem[] = [
   {
-    company: 'Remote Dev',
-    role: 'Fullstack Mobile Application Developer',
-    start: '2022',
-    end: 'Present',
+
+
+    company: 'Data Age Solutions',
+    role: 'Mobile Developer',
+    start: '',
+    end: '',
+    tools: ['React Native', 'Expo', 'Dart','Django','Framer Motion'],
     highlights: [
-      'Built and maintained responsive mobile apps using React Native and modern frameworks.',
-      'Collaborated using GitHub for version control, code reviews, and team workflows.',
-      'Worked with cloud platforms (AWS/OCI) and tools like Docker Compose to streamline app deployment.',
-      'Focused on clean, user-friendly UI to improve overall user experience.'
-    ]
+  'Built and optimized cross-platform mobile applications using React Native and Expo.',
+  'Integrated RESTful APIs and backend services.',
+  'Managed source control and collaborative development workflows using Git and GitHub.',
+  'Containerized supporting services using Docker.'
+]
   },
   {
-    company: 'Zb Bank Rusape',
+    company: 'ZB Bank Rusape',
     role: 'AI & Security Engineer',
     start: '2023',
     end: '2024',
+    tools: ['Python', 'GitHub', 'AI/ML','Scikit-Learn'],
     highlights: [
       'Developed AI-driven systems to support data-driven decision-making.',
-      'Implemented secure application architectures and enforced best security practices.',
-      'Used GitHub for structured collaboration and version control across teams.',
+      'Secured app architecture using AES encryption, JWT auth, and HTTPS/TLS.',
+      'Used testing and performance checks to ensure efficient and reliable applications.',
       'Worked closely with data teams to improve model performance and reliability.'
     ]
   },
@@ -124,23 +149,23 @@ const experience: ExperienceItem[] = [
     role: 'Web Developer',
     start: '2024',
     end: '2025',
+    tools: ['Next.js', 'Node.js', 'Wordpress','Figma'],
     highlights: [
-      'Improved website performance, SEO, and loading speed for better user engagement.',
-      'Collaborated on projects using GitHub for efficient development workflows.',
-      'Deployed web applications using Docker and managed hosting environments.',
-      'Translated user requirements into scalable and maintainable web solutions.'
+      'Converted Figma designs into responsive and accessible code, improving user experience.',
+      'Collaborated on projects using WordPress for faster website design and development.',
+      'Attended workshops to gain insights into user needs and requirements at the root level.',
+      'Translated user requirements into scalable web solutions using a modular and maintainable approach.'
     ]
   },
   {
-    company: 'Data Age Solutions',
-    role: 'Mobile Developer',
-    start: '',
-    end: '',
+    company: 'Remote Dev',
+    role: 'Fullstack Developer',
+    start: '2022',
+    end: 'Present',
+    tools: ['React Native', 'Django', 'Laravel', 'Angular', 'Vue.js','ML'],
     highlights: [
-      'Developed mobile applications with a focus on performance and usability.',
-      'Integrated APIs and backend services for seamless functionality.',
-      'Used GitHub for version control and collaboration with development teams.',
-      'Containerised supporting services using Docker to ensure consistent environments.'
+      'Developed and deployed machine learning models to solve complex problems and improve prediction accuracy.',
+      'Designed and implemented data pipelines to streamline data processing, transformation, and analysis, including testing and performance checks.'
     ]
   }
 ]
