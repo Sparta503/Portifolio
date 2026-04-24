@@ -6,11 +6,12 @@
       <!-- EDUCATION LIST -->
       <div id="education-all-posts" class="scroll-mt-28">
         <h3 class="text-2xl font-bold mb-6">All Posts</h3>
+
         <div class="grid gap-6">
           <article
             v-for="item in education"
             :key="item.school + item.program"
-            class="bg-gray-800/60 border border-white/5 rounded-xl p-6 hover:-translate-y-1 hover:bg-gray-800/70 hover:shadow-lg transition-all duration-200"
+            class="edu-card bg-gray-800/60 border border-white/5 rounded-xl p-6 hover:scale-[1.03] hover:bg-gray-800/70 hover:shadow-2xl hover:shadow-red-500/50 hover:ring-4 hover:ring-red-500/30 transition-all duration-500 ease-out"
           >
             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
               <div>
@@ -47,8 +48,8 @@
 
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
-          <!-- Current News -->
-          <div class="bg-gray-800/60 border border-white/5 rounded-xl p-5 hover:bg-gray-800/80 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+          <!-- Dev Mindset -->
+          <div class="edu-card bg-gray-800/60 border border-white/5 rounded-xl p-5 hover:bg-gray-800/80 hover:scale-[1.03] hover:shadow-2xl hover:shadow-red-500/50 hover:ring-4 hover:ring-red-500/30 transition-all duration-500 ease-out">
             <div class="flex items-center gap-3 mb-3">
               <Newspaper class="w-6 h-6 text-blue-400" />
               <h4 class="font-semibold text-lg">Dev MindSet</h4>
@@ -60,7 +61,7 @@
           </div>
 
           <!-- Certifications -->
-          <div class="bg-gray-800/60 border border-white/5 rounded-xl p-5 hover:bg-gray-800/80 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+          <div class="edu-card bg-gray-800/60 border border-white/5 rounded-xl p-5 hover:bg-gray-800/80 hover:scale-[1.03] hover:shadow-2xl hover:shadow-red-500/50 hover:ring-4 hover:ring-red-500/30 transition-all duration-500 ease-out">
             <div class="flex items-center gap-3 mb-3">
               <Award class="w-6 h-6 text-yellow-400" />
               <h4 class="font-semibold text-lg">Certifications</h4>
@@ -72,70 +73,26 @@
             </ul>
           </div>
 
-          <!-- Tech Stack -->
-          <div class="bg-gray-800/60 border border-white/5 rounded-xl p-5 hover:bg-gray-800/80 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+          <!-- Tech Stack (PILL STYLE UPDATED ONLY HERE) -->
+          <div class="edu-card bg-gray-800/60 border border-white/5 rounded-xl p-5 hover:bg-gray-800/80 hover:scale-[1.03] hover:shadow-2xl hover:shadow-red-500/50 hover:ring-4 hover:ring-red-500/30 transition-all duration-500 ease-out">
             <div class="flex items-center gap-3 mb-3">
               <Wrench class="w-6 h-6 text-green-400" />
               <h4 class="font-semibold text-lg">Tech Stack</h4>
             </div>
 
-            <div class="grid grid-cols-2 gap-3 text-sm text-gray-300">
-
-              <div class="flex items-center gap-2">
-                <Code class="w-4 h-4 text-blue-300" />
-                <span>React / Vue</span>
-              </div>
-
-              <div class="flex items-center gap-2">
-                <Smartphone class="w-4 h-4 text-pink-300" />
-                <span>React Native</span>
-              </div>
-
-              <div class="flex items-center gap-2">
-                <Server class="w-4 h-4 text-green-300" />
-                <span>Node.js</span>
-              </div>
-
-              <div class="flex items-center gap-2">
-                <Brain class="w-4 h-4 text-purple-300" />
-                <span>Python (AI/ML)</span>
-              </div>
-
-              <div class="flex items-center gap-2">
-                <Database class="w-4 h-4 text-yellow-300" />
-                <span>PostgreSQL / MongoDB</span>
-              </div>
-
-              <div class="flex items-center gap-2">
-                <Github class="w-4 h-4 text-white" />
-                <span>GitHub</span>
-              </div>
-
-              <div class="flex items-center gap-2">
-                <Box class="w-4 h-4 text-blue-400" />
-                <span>Docker</span>
-              </div>
-
-              <div class="flex items-center gap-2">
-                <Cloud class="w-4 h-4 text-cyan-300" />
-                <span>AWS / OCI</span>
-              </div>
-
-              <div class="flex items-center gap-2">
-             <Coffee class="w-4 h-4 text-orange-400" />
-             <span>Java</span>
-               </div>
-
-             <div class="flex items-center gap-2">
-            <Layers class="w-4 h-4 text-red-400" />
-            <span>Angular</span>
-              </div>
-
-            <div class="flex items-center gap-2">
-             <AppWindow class="w-4 h-4 text-sky-400" />
-              <span>Flutter</span>
-           </div>
-
+            <!-- PILL TAGS -->
+            <div class="flex flex-wrap gap-2 text-sm text-gray-200">
+              <span class="tech-pill"> Vue</span>
+              <span class="tech-pill">React Native</span>
+              <span class="tech-pill">Node.js</span>
+              <span class="tech-pill">Python (AI/ML)</span>
+              <span class="tech-pill">Laravel</span>
+              <span class="tech-pill">GitHub</span>
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">Django</span>
+              <span class="tech-pill">Java</span>
+              <span class="tech-pill">Angular</span>
+              <span class="tech-pill">Flutter</span>
             </div>
           </div>
 
@@ -190,3 +147,47 @@ const education: EducationItem[] = [
   }
 ]
 </script>
+
+<style scoped>
+.edu-card {
+  transform-style: preserve-3d;
+  transform: perspective(1200px) translateY(0px) rotateX(2deg);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35),
+              inset 0 1px 0 rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.6s ease;
+  animation: floatCard 7s ease-in-out infinite;
+}
+
+.edu-card:hover {
+  transform: perspective(1200px) translateY(-10px) scale(1.04) rotateX(0deg) translateZ(25px);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.55),
+              0 0 22px rgba(239, 68, 68, 0.35),
+              0 0 18px rgba(59,130,246,0.2),
+              inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+@keyframes floatCard {
+  0% { transform: perspective(1200px) translateY(0px) rotateX(2deg); }
+  50% { transform: perspective(1200px) translateY(-3px) rotateX(2.5deg); }
+  100% { transform: perspective(1200px) translateY(0px) rotateX(2deg); }
+}
+
+/* ✨ TECH PILLS */
+.tech-pill {
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.tech-pill:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 0 12px rgba(59,130,246,0.5);
+}
+</style>
