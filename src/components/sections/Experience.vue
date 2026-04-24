@@ -34,19 +34,19 @@
                   {{ item.company }} • {{ item.start }} - {{ item.end }}
                 </p>
 
-                <!-- Tools -->
+                <!-- Tools (🔥 GLASS PILLS UPDATED) -->
                 <div v-if="item.tools?.length" class="flex flex-wrap gap-2 mb-3">
                   <span
                     v-for="tool in item.tools"
                     :key="tool"
-                    class="bg-black text-white px-3 py-1 rounded-full text-xs"
+                    class="glass-pill"
                   >
                     {{ tool }}
                   </span>
                 </div>
 
-                <!-- ⭐ GLASS HIGHLIGHTS CARD (NEW) -->
-                <div class="mt-4 p-4 rounded-xl bg-white/70 backdrop-blur-md border border-white/40 shadow-inner">
+                <!-- GLASS HIGHLIGHTS -->
+                <div class="mt-4 p-4 rounded-xl glass-highlights">
                   <ul class="text-sm text-gray-700 space-y-2">
                     <li v-for="point in item.highlights" :key="point">
                       • {{ point }}
@@ -82,19 +82,19 @@
                   {{ item.company }} • {{ item.start }} - {{ item.end }}
                 </p>
 
-                <!-- Tools -->
+                <!-- Tools (🔥 GLASS PILLS UPDATED) -->
                 <div v-if="item.tools?.length" class="flex flex-wrap gap-2 mb-3">
                   <span
                     v-for="tool in item.tools"
                     :key="tool"
-                    class="bg-black text-white px-3 py-1 rounded-full text-xs"
+                    class="glass-pill"
                   >
                     {{ tool }}
                   </span>
                 </div>
 
-                <!-- ⭐ GLASS HIGHLIGHTS CARD (NEW) -->
-                <div class="mt-4 p-4 rounded-xl bg-white/70 backdrop-blur-md border border-white/40 shadow-inner">
+                <!-- GLASS HIGHLIGHTS -->
+                <div class="mt-4 p-4 rounded-xl glass-highlights">
                   <ul class="text-sm text-gray-700 space-y-2">
                     <li v-for="point in item.highlights" :key="point">
                       • {{ point }}
@@ -180,3 +180,66 @@ const experience: ExperienceItem[] = [
   }
 ]
 </script>
+
+<style scoped>
+/* GLASS HIGHLIGHTS */
+.glass-highlights {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(37, 99, 235, 0.18)
+  );
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.25),
+    0 0 35px rgba(37, 99, 235, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+
+  transition: all 0.4s ease;
+}
+
+.glass-highlights:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.35),
+    0 0 45px rgba(37, 99, 235, 0.5);
+}
+
+/* 🔮 GLASS PILL TAGS (NEW) */
+.glass-pill {
+  padding: 6px 14px;
+  border-radius: 9999px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(37, 99, 235, 0.22)
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.75);
+
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.15),
+    0 0 15px rgba(37,99,235,0.25);
+
+  transition: all 0.3s ease;
+}
+
+.glass-pill:hover {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow:
+    0 15px 30px rgba(0,0,0,0.25),
+    0 0 25px rgba(37,99,235,0.4);
+}
+</style>
