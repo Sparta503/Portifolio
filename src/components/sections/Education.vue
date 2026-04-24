@@ -73,7 +73,7 @@
             </ul>
           </div>
 
-          <!-- Tech Stack (PILL STYLE UPDATED ONLY HERE) -->
+          <!-- Tech Stack -->
           <div class="edu-card bg-gray-800/60 border border-white/5 rounded-xl p-5 hover:bg-gray-800/80 hover:scale-[1.03] hover:shadow-2xl hover:shadow-red-500/50 hover:ring-4 hover:ring-red-500/30 transition-all duration-500 ease-out">
             <div class="flex items-center gap-3 mb-3">
               <Wrench class="w-6 h-6 text-green-400" />
@@ -82,7 +82,7 @@
 
             <!-- PILL TAGS -->
             <div class="flex flex-wrap gap-2 text-sm text-gray-200">
-              <span class="tech-pill"> Vue</span>
+              <span class="tech-pill">Vue</span>
               <span class="tech-pill">React Native</span>
               <span class="tech-pill">Node.js</span>
               <span class="tech-pill">Python (AI/ML)</span>
@@ -106,18 +106,7 @@
 import {
   Newspaper,
   Award,
-  Wrench,
-  Code,
-  Smartphone,
-  Server,
-  Brain,
-  Database,
-  Github,
-  Box,
-  Coffee,
-  Layers,
-  AppWindow,
-  Cloud
+  Wrench
 } from 'lucide-vue-next'
 
 type EducationItem = {
@@ -152,42 +141,51 @@ const education: EducationItem[] = [
 .edu-card {
   transform-style: preserve-3d;
   transform: perspective(1200px) translateY(0px) rotateX(2deg);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35),
-              inset 0 1px 0 rgba(255,255,255,0.05);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+
   backdrop-filter: blur(10px);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.6s ease;
-  animation: floatCard 7s ease-in-out infinite;
+
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.6s ease;
 }
 
+/* 🌊 softer premium hover (same vibe as pricing) */
 .edu-card:hover {
-  transform: perspective(1200px) translateY(-10px) scale(1.04) rotateX(0deg) translateZ(25px);
-  box-shadow: 0 22px 55px rgba(0,0,0,0.55),
-              0 0 22px rgba(239, 68, 68, 0.35),
-              0 0 18px rgba(59,130,246,0.2),
-              inset 0 1px 0 rgba(255,255,255,0.08);
+  transform:
+    perspective(1200px)
+    translateY(-12px)
+    scale(1.04);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.55),
+    0 0 25px rgba(239, 68, 68, 0.35),
+    0 0 20px rgba(59,130,246,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
-@keyframes floatCard {
-  0% { transform: perspective(1200px) translateY(0px) rotateX(2deg); }
-  50% { transform: perspective(1200px) translateY(-3px) rotateX(2.5deg); }
-  100% { transform: perspective(1200px) translateY(0px) rotateX(2deg); }
-}
-
-/* ✨ TECH PILLS */
+/* ✨ TECH PILLS (soft premium version) */
 .tech-pill {
   padding: 6px 12px;
   border-radius: 9999px;
+
   background: rgba(59, 130, 246, 0.15);
   border: 1px solid rgba(59, 130, 246, 0.3);
+
   backdrop-filter: blur(6px);
-  transition: all 0.25s ease;
-  cursor: default;
+
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tech-pill:hover {
-  transform: translateY(-3px) scale(1.05);
+  transform: translateY(-4px) scale(1.08);
+
   background: rgba(59, 130, 246, 0.35);
-  box-shadow: 0 0 12px rgba(59,130,246,0.5);
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.25),
+    0 0 15px rgba(59,130,246,0.6);
 }
 </style>
