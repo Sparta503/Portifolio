@@ -31,7 +31,6 @@
           <h1 class="mt-4 leading-none hero-anim hero-anim-2">
             <span class="block text-5xl md:text-7xl font-extrabold">CREATIVE</span>
 
-            <!-- 🔥 ONLY THIS LINE CHANGED -->
             <span class="block text-5xl md:text-7xl italic font-semibold">
               <span class="typing-text"></span><span class="cursor">|</span>
             </span>
@@ -42,12 +41,13 @@
             BASED IN AFRICA ZIMBABWE
           </div>
 
-          <p class="mt-6 text-white/75 hero-anim hero-anim-4">
+          <!-- 🔮 ONLY CHANGE: GLASS PARAGRAPH -->
+          <p class="mt-6 hero-anim hero-anim-4 glass-paragraph">
             I build scalable web and mobile apps with clean UI while leveraging cloud services,
             data pipelines, and machine learning to deliver high-performance solutions.
           </p>
 
-          <!-- BUTTONS -->
+          <!-- BUTTONS (UNCHANGED) -->
           <div class="mt-8 flex gap-4 hero-anim hero-anim-5">
             <a href="#projects"
               class="px-8 py-3 bg-blue-600 rounded-full hover:bg-blue-700 hover:scale-105 hover:-translate-y-1 transition">
@@ -66,7 +66,7 @@
       </div>
     </div>
 
-    <!-- BLENDED IMAGE -->
+    <!-- BLENDED IMAGE (UNCHANGED) -->
     <div class="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20 hero-anim hero-anim-6">
       <div class="relative profile-wrapper">
 
@@ -85,7 +85,7 @@
       </div>
     </div>
 
-    <!-- SOCIAL ICONS -->
+    <!-- SOCIAL ICONS (UNCHANGED) -->
     <div class="hidden md:flex flex-col items-center gap-10 absolute top-1/2 right-20 -translate-y-1/2 z-30">
       <div class="w-px h-16 bg-white/30"></div>
 
@@ -181,6 +181,39 @@ onMounted(() => {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* 🔮 NEW GLASS PARAGRAPH */
+.glass-paragraph {
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.14),
+    rgba(59,130,246,0.10)
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.18);
+
+  padding: 14px 18px;
+  border-radius: 14px;
+
+  color: rgba(255,255,255,0.85);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+
+  transition: all 0.3s ease;
+}
+
+.glass-paragraph:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 45px rgba(0,0,0,0.35),
+    0 0 25px rgba(59,130,246,0.25);
+}
+
+/* EVERYTHING BELOW UNTOUCHED */
 .left-side {
   opacity: 0;
   animation: fadeIn 3s forwards;
@@ -216,20 +249,16 @@ onMounted(() => {
   100% { transform: rotate(0deg); }
 }
 
-/* 🔥 IMAGE BLENDING (UNCHANGED) */
 .profile-img {
   opacity: 0.95;
-
   -webkit-mask-image:
     radial-gradient(circle at center, black 60%, transparent 100%),
     linear-gradient(to top, transparent 0%, black 15%),
     linear-gradient(to bottom, transparent 0%, black 15%),
     linear-gradient(to left, transparent 0%, black 35%),
     linear-gradient(to right, transparent 0%, black 55%);
-
   -webkit-mask-composite: destination-in;
   mask-composite: intersect;
-
   filter:
     blur(0.2px)
     brightness(1.05)
@@ -237,13 +266,11 @@ onMounted(() => {
     drop-shadow(0 25px 60px rgba(0, 0, 0, 0.4));
 }
 
-/* ☁️ CLOUD OVERLAY (UNCHANGED) */
 .cloud-overlay {
   background:
     radial-gradient(circle at 50% 85%, rgba(146, 179, 232, 0.06), transparent 60%),
     radial-gradient(circle at 30% 75%, rgba(203, 160, 242, 0.035), transparent 45%),
     radial-gradient(circle at 70% 75%, rgba(154, 186, 237, 0.035), transparent 45%);
-
   filter: blur(28px);
   opacity: 0.22;
   mix-blend-mode: screen;
@@ -258,7 +285,6 @@ onMounted(() => {
   z-index: -1;
 }
 
-/* ✍️ typing cursor */
 .cursor {
   display: inline-block;
   animation: blink 0.8s infinite;
