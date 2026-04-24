@@ -119,7 +119,7 @@ const experience: ExperienceItem[] = [
   {
 
 
-    company: 'Data Age Solutions',
+    company: 'Data Age Solutions Harare',
     role: 'Mobile Developer',
     start: '',
     end: '',
@@ -145,7 +145,7 @@ const experience: ExperienceItem[] = [
     ]
   },
   {
-    company: 'Sakiso Digital',
+    company: 'Sakiso Digital NewLands Harare',
     role: 'Web Developer',
     start: '2024',
     end: '2025',
