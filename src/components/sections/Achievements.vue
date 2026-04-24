@@ -1,47 +1,77 @@
 <template>
-  <section id="achievements" class="py-24 bg-blue-600 text-white">
+  <section id="pricing" class="py-24 bg-blue-600 text-white">
     <div class="max-w-6xl mx-auto px-6">
 
       <!-- Header -->
-      <div class="flex items-center justify-between mb-12">
-        <h2 class="text-3xl font-semibold text-white">
-          Our Awards
-        </h2>
-
-        <a 
-          href="#projects"
-          class="text-blue-200 hover:text-white hover:underline font-bold transition"
-        >
-          View My Work →
-        </a>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold text-white">Pricing Plans</h2>
+        <p class="text-white/70 mt-2">Simple, flexible pricing for your needs</p>
       </div>
 
-      <!-- List -->
-      <div class="divide-y divide-white/20">
+      <!-- Cards -->
+      <div class="grid md:grid-cols-3 gap-6">
 
-        <!-- Row -->
-        <div 
-          v-for="item in achievements"
-          :key="item.title"
-          class="grid grid-cols-3 py-6 items-center 
-                 transition-all duration-300 ease-out
-                 hover:bg-white/10 hover:-translate-y-1 hover:scale-[1.01] 
-                 hover:shadow-lg hover:shadow-black/10 rounded-lg px-4"
-        >
-          <!-- LEFT -->
-          <p class="text-white font-medium transition">
-            {{ item.title }}
-          </p>
+        <!-- BASIC -->
+        <div class="pricing-card">
+          <h3 class="text-xl font-bold">Basic</h3>
+          <p class="text-white/70 mt-2">Perfect for starters</p>
 
-          <!-- CENTER -->
-          <p class="text-white/80 text-sm transition">
-            {{ item.category }}
-          </p>
+          <div class="text-4xl font-extrabold mt-6">
+            $50<span class="text-lg font-normal text-white/70">/project</span>
+          </div>
 
-          <!-- RIGHT -->
-          <p class="text-right text-white/80 transition">
-            {{ item.year }}
-          </p>
+          <ul class="mt-6 space-y-2 text-white/80 text-sm">
+            <li>✔ Simple landing page</li>
+            <li>✔ Responsive design</li>
+            <li>✔ Basic UI setup</li>
+          </ul>
+
+          <a href="#contact" class="pricing-btn mt-8 inline-block">
+            Get Started
+          </a>
+        </div>
+
+        <!-- STANDARD -->
+        <div class="pricing-card featured">
+          <h3 class="text-xl font-bold">Standard</h3>
+          <p class="text-white/70 mt-2">Best for most clients</p>
+
+          <div class="text-4xl font-extrabold mt-6">
+            $150<span class="text-lg font-normal text-white/70">/project</span>
+          </div>
+
+          <ul class="mt-6 space-y-2 text-white/80 text-sm">
+            <li>✔ Full website (5–7 pages)</li>
+            <li>✔ API integration</li>
+            <li>✔ Mobile Development</li>
+            <li>✔ Authentication system</li>
+          </ul>
+
+          <a href="#contact" class="pricing-btn mt-8 inline-block">
+            Choose Plan
+          </a>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="pricing-card">
+          <h3 class="text-xl font-bold">Premium</h3>
+          <p class="text-white/70 mt-2">For advanced systems</p>
+
+          <div class="text-4xl font-extrabold mt-6">
+            $300+<span class="text-lg font-normal text-white/70">/project</span>
+          </div>
+
+          <ul class="mt-6 space-y-2 text-white/80 text-sm">
+            <li>✔ Fullstack application</li>
+            <li>✔ Backend + database</li>
+             <li>✔ Mobile Development</li>
+              <li>✔ Web and Mobile Hosting</li>
+            <li>✔ Cloud deployment</li>
+          </ul>
+
+          <a href="#contact" class="pricing-btn mt-8 inline-block">
+            Contact Me
+          </a>
         </div>
 
       </div>
@@ -51,32 +81,57 @@
 </template>
 
 <script setup lang="ts">
-type Achievement = {
-  title: string
-  category: string
-  year: string
+</script>
+
+<style scoped>
+/* 🔥 base card */
+.pricing-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 18px;
+  padding: 28px;
+  text-align: center;
+
+  backdrop-filter: blur(12px);
+  transform: perspective(1000px) translateY(0px);
+
+  transition: all 0.5s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-const achievements: Achievement[] = [
-  {
-    title: "Site Of The Day",
-    category: "tailwind & Animation",
-    year: "2022"
-  },
-  {
-    title: "Best Business Model",
-    category: "New Strategy",
-    year: "2023"
-  },
-  {
-    title: "Motion Graphics",
-    category: "3D & Visual Effect",
-    year: "2024"
-  },
-  {
-    title: "Video Design",
-    category: "Canva and Adobe illustrator",
-    year: "2025"
-  }
-]
-</script>
+/* 🚀 hover lift + glow */
+.pricing-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.4),
+    0 0 25px rgba(59,130,246,0.4);
+  border-color: rgba(59,130,246,0.6);
+}
+
+/* 🌟 featured middle card */
+.featured {
+  background: rgba(59,130,246,0.25);
+  border: 1px solid rgba(59,130,246,0.5);
+  transform: scale(1.05);
+}
+
+/* 🔘 button glow */
+.pricing-btn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+/* 💥 button hover glow */
+.pricing-btn:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow:
+    0 0 20px rgba(59,130,246,0.6),
+    0 10px 25px rgba(0,0,0,0.3);
+  background: #1d4ed8;
+}
+</style>
