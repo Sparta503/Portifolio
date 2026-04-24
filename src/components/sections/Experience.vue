@@ -10,8 +10,8 @@
       <!-- Timeline -->
       <div class="relative">
 
-        <!-- Vertical Line (BIGGER + MORE VISIBLE) -->
-        <div class="absolute left-1/2 top-0 h-full w-[4px] bg-white/40 -translate-x-1/2 rounded-full"></div>
+        <!-- Vertical Line (BIGGER AGAIN 🔥) -->
+        <div class="absolute left-1/2 top-0 h-full w-[6px] bg-white/50 -translate-x-1/2 rounded-full"></div>
 
         <div class="space-y-16">
 
@@ -34,18 +34,12 @@
                   {{ item.company }} • {{ item.start }} - {{ item.end }}
                 </p>
 
-                <!-- Tools -->
                 <div v-if="item.tools?.length" class="flex flex-wrap gap-2 mb-3">
-                  <span
-                    v-for="tool in item.tools"
-                    :key="tool"
-                    class="glass-pill"
-                  >
+                  <span v-for="tool in item.tools" :key="tool" class="glass-pill">
                     {{ tool }}
                   </span>
                 </div>
 
-                <!-- Highlights -->
                 <div class="mt-4 p-4 rounded-xl glass-highlights">
                   <ul class="text-sm text-gray-700 space-y-2">
                     <li v-for="point in item.highlights" :key="point">
@@ -59,11 +53,11 @@
 
             <div v-else></div>
 
-            <!-- CENTER ICON (BIGGER NODE) -->
+            <!-- CENTER ICON (BIGGER 🔥🔥) -->
             <div class="flex justify-center">
               <div
-                class="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center shadow-xl border-4 border-blue-600
-                       transition-transform duration-300 hover:scale-110 text-lg"
+                class="w-16 h-16 bg-white text-blue-600 rounded-full flex items-center justify-center shadow-2xl border-4 border-blue-600
+                       transition-transform duration-300 hover:scale-110 text-2xl"
               >
                 💼
               </div>
@@ -82,18 +76,12 @@
                   {{ item.company }} • {{ item.start }} - {{ item.end }}
                 </p>
 
-                <!-- Tools -->
                 <div v-if="item.tools?.length" class="flex flex-wrap gap-2 mb-3">
-                  <span
-                    v-for="tool in item.tools"
-                    :key="tool"
-                    class="glass-pill"
-                  >
+                  <span v-for="tool in item.tools" :key="tool" class="glass-pill">
                     {{ tool }}
                   </span>
                 </div>
 
-                <!-- Highlights -->
                 <div class="mt-4 p-4 rounded-xl glass-highlights">
                   <ul class="text-sm text-gray-700 space-y-2">
                     <li v-for="point in item.highlights" :key="point">
@@ -135,10 +123,10 @@ const experience: ExperienceItem[] = [
     end: '',
     tools: ['React Native', 'Expo', 'Dart','Django','Framer Motion'],
     highlights: [
-      'Built and optimized cross-platform mobile applications using React Native and Expo.',
-      'Integrated RESTful APIs and backend services.',
-      'Managed source control and collaborative development workflows using Git and GitHub.',
-      'Containerized supporting services using Docker.'
+      'Built and optimized cross-platform mobile apps.',
+      'Integrated RESTful APIs.',
+      'Worked with Git & Docker workflows.',
+      'Improved deployment pipelines.'
     ]
   },
   {
@@ -148,10 +136,10 @@ const experience: ExperienceItem[] = [
     end: '2024',
     tools: ['Python', 'GitHub', 'AI/ML','Scikit-Learn'],
     highlights: [
-      'Developed AI-driven systems to support data-driven decision-making.',
-      'Secured app architecture using AES encryption, JWT auth, and HTTPS/TLS.',
-      'Used testing and performance checks to ensure efficient and reliable applications.',
-      'Worked closely with data teams to improve model performance and reliability.'
+      'Built AI-driven systems.',
+      'Implemented encryption & security layers.',
+      'Improved system performance.',
+      'Worked with data teams.'
     ]
   },
   {
@@ -161,10 +149,10 @@ const experience: ExperienceItem[] = [
     end: '2025',
     tools: ['Next.js', 'Node.js', 'Wordpress','Figma'],
     highlights: [
-      'Converted Figma designs into responsive and accessible code, improving user experience.',
-      'Collaborated on projects using WordPress for faster website design and development.',
-      'Attended workshops to gain insights into user needs and requirements at the root level.',
-      'Translated user requirements into scalable web solutions using a modular approach.'
+      'Converted UI designs into web apps.',
+      'Worked with WordPress systems.',
+      'Built scalable web solutions.',
+      'Improved UX systems.'
     ]
   },
   {
@@ -174,15 +162,14 @@ const experience: ExperienceItem[] = [
     end: 'Present',
     tools: ['React Native', 'Django', 'Laravel', 'Angular', 'Vue.js','ML'],
     highlights: [
-      'Developed and deployed machine learning models to solve complex problems.',
-      'Designed and implemented data pipelines for processing and analysis.'
+      'Built ML-powered systems.',
+      'Designed data pipelines.'
     ]
   }
 ]
 </script>
 
 <style scoped>
-/* GLASS HIGHLIGHTS */
 .glass-highlights {
   background: linear-gradient(
     135deg,
@@ -191,8 +178,6 @@ const experience: ExperienceItem[] = [
   );
 
   backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-
   border: 1px solid rgba(255, 255, 255, 0.7);
 
   box-shadow:
@@ -203,14 +188,6 @@ const experience: ExperienceItem[] = [
   transition: all 0.4s ease;
 }
 
-.glass-highlights:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.35),
-    0 0 45px rgba(37, 99, 235, 0.5);
-}
-
-/* GLASS PILL TAGS */
 .glass-pill {
   padding: 6px 14px;
   border-radius: 9999px;
@@ -222,16 +199,10 @@ const experience: ExperienceItem[] = [
   );
 
   backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
   border: 1px solid rgba(255, 255, 255, 0.65);
 
   font-size: 0.75rem;
   color: rgba(0, 0, 0, 0.75);
-
-  box-shadow:
-    0 10px 20px rgba(0,0,0,0.15),
-    0 0 15px rgba(37,99,235,0.25);
 
   transition: all 0.3s ease;
 }
@@ -239,6 +210,4 @@ const experience: ExperienceItem[] = [
 .glass-pill:hover {
   transform: translateY(-3px) scale(1.06);
 }
-
-/* CENTER ICON IMPROVEMENT (bigger + cleaner glow feel) */
 </style>
