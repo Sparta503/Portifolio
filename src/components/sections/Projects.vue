@@ -15,7 +15,7 @@
         <div 
           v-for="project in projects" 
           :key="project.title"
-          class="shadow-lg hover:-translate-y-4 hover:shadow-2xl transition bg-white/0"
+          class="shadow-lg hover:scale-[1.06] hover:shadow-2xl hover:shadow-red-500/70 hover:ring-4 hover:ring-red-500/40 transition-all duration-200 bg-white"
         >
           
           <!-- IMAGE -->
