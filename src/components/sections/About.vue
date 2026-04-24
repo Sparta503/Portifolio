@@ -1,12 +1,12 @@
 <template>
-  <section id="about" class="scroll-mt-24 py-24 bg-blue-600">
+  <section id="about" class="scroll-mt-24 py-24 relative overflow-hidden bg-[#2563eb]">
     
     <div class="max-w-[50vw] mx-auto px-6">
       
-      <!-- Card -->
+      <!-- MAIN CARD -->
       <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10 grid md:grid-cols-2 gap-x-8 items-start">
 
-        <!-- LEFT: Image -->
+        <!-- LEFT -->
         <div class="flex justify-center">
           <div class="bg-white p-4 rounded-xl shadow-inner">
             <img
@@ -15,8 +15,8 @@
               class="rounded-lg object-contain w-[280px] h-[300px] tkay-logo"
             />
 
-            <!-- Socials -->
-            <div class="flex justify-center gap-6 mt-6 bg-blue-600 shadow-md py-2 rounded-lg">
+            <!-- SOCIALS -->
+            <div class="flex justify-center gap-6 mt-6 bg-[#2563eb] shadow-md py-2 rounded-lg">
               <a href="https://www.facebook.com/TakuInnovations" target="_blank" class="social-icon">
                 <i class="fa-brands fa-facebook fa-3x"></i>
               </a>
@@ -33,43 +33,56 @@
           </div>
         </div>
 
-        <!-- RIGHT: Content -->
+        <!-- RIGHT -->
         <div class="mt-4 md:mt-0">
           
-          <h2 class="text-3xl md:text-4xl font-bold text-blue-950 leading-snug">
+          <h2 class="text-3xl md:text-4xl font-bold text-blue-950">
             A FULL STACK SOFTWARE DEVELOPER
           </h2>
 
-          <!-- 🔥 MORE VISIBLE PREMIUM CARD -->
+          <!-- INFO CARD -->
           <div class="info-card mt-6 p-6 rounded-2xl">
-            
-            <p class="text-lg leading-relaxed mb-4">
-              Creative Software Developer with 5+ years of experience building scalable web and mobile applications, focused on clean UI and strong user experience.
+            <p class="mb-4">
+              Creative Software Developer with 5+ years of experience building scalable apps.
             </p>
-
-            <p class="text-lg leading-relaxed mb-4">
-              Skilled in Modern Technologies, Cloud Services, Data Pipelines, and Machine Learning to deliver efficient solutions.
+            <p class="mb-4">
+              Skilled in Cloud, Data Pipelines, and Machine Learning.
             </p>
-
-            <p class="text-lg leading-relaxed">
-              Thrives in Dynamic Environments and continuously adapts to new Technologies and Industry Trends.  
-              Committed to applying Best Practices to build high-quality, reliable, and Future-Ready Applications.
+            <p>
+              Focused on building reliable, future-ready applications.
             </p>
-
           </div>
 
-          <!-- Buttons -->
+          <!-- BUTTONS -->
           <div class="mt-6 flex gap-4">
-
-            <a href="#projects" class="glow-btn">
-              ⬇ My Projects
-            </a>
-
-            <a href="#" class="glow-btn">
-              ⬇ Download CV
-            </a>
-
+            <a href="#projects" class="glow-btn">⬇ My Projects</a>
+            <a href="#" class="glow-btn">⬇ Download CV</a>
           </div>
+        </div>
+
+      </div>
+
+      <!-- STATS -->
+      <div ref="statsRef" class="stats-card mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        
+        <div class="stat-box">
+          <h3 class="stat-number">{{ stats.awards }}</h3>
+          <p class="stat-label">Awards</p>
+        </div>
+
+        <div class="stat-box">
+          <h3 class="stat-number">{{ stats.contracts }}</h3>
+          <p class="stat-label">contracts</p>
+        </div>
+
+        <div class="stat-box">
+          <h3 class="stat-number">{{ stats.projects }}</h3>
+          <p class="stat-label">Projects</p>
+        </div>
+
+        <div class="stat-box">
+          <h3 class="stat-number">{{ stats.clients }}</h3>
+          <p class="stat-label">Clients</p>
         </div>
 
       </div>
@@ -79,97 +92,169 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from "vue"
 import tkayLogo from "../../assets/tkay.png"
+
+const statsRef = ref<HTMLElement | null>(null)
+
+const stats = ref({
+  awards: 0,
+  contracts: 0,
+  projects: 0,
+  clients: 0
+})
+
+const target = {
+  awards: 5,
+  contracts: 20,
+  projects: 15,
+  clients: 25
+}
+
+const animateCount = (key: keyof typeof target, end: number) => {
+  let start = 0
+  const duration = 2000
+  const stepTime = 16
+  const increment = end / (duration / stepTime)
+
+  const counter = setInterval(() => {
+    start += increment
+
+    if (start >= end) {
+      stats.value[key] = end
+      clearInterval(counter)
+    } else {
+      stats.value[key] = Math.floor(start)
+    }
+  }, stepTime)
+}
+
+onMounted(() => {
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      Object.keys(target).forEach((key) => {
+        animateCount(key as keyof typeof target, target[key as keyof typeof target])
+      })
+      observer.disconnect()
+    }
+  }, { threshold: 0.4 })
+
+  if (statsRef.value) observer.observe(statsRef.value)
+})
 </script>
 
 <style scoped>
-.tkay-logo {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(35, 122, 236, 0.15), transparent),
+    radial-gradient(circle at 80% 60%, rgba(29, 102, 220, 0.2), transparent);
+  pointer-events: none;
 }
 
+.tkay-logo {
+  transition: transform 0.3s ease;
+}
 .tkay-logo:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* =========================
-   BUTTONS
-========================= */
 .glow-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   padding: 1rem 2rem;
   border-radius: 9999px;
-
   background: #2563eb;
   color: white;
-
-  border: 1px solid rgba(37, 99, 235, 0.6);
-
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
-
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.35),
+    0 0 20px rgba(37, 99, 235, 0.25);
+  transition: all 0.35s ease;
 }
 
 .glow-btn:hover {
   transform: translateY(-8px) scale(1.08);
-
-  background: #1d4ed8;
-
+  background: #1e4fd6;
   box-shadow:
-    0 18px 45px rgba(37, 99, 235, 0.55),
-    0 0 30px rgba(37, 99, 235, 0.35),
-    0 0 60px rgba(37, 99, 235, 0.15);
+    0 20px 50px rgba(37, 99, 235, 0.65),
+    0 0 40px rgba(37, 99, 235, 0.45);
 }
 
-/* =========================
-   SOCIAL ICONS
-========================= */
-.social-icon {
-  color: white;
-  opacity: 0.85;
-  transition: all 0.35s ease;
-}
-
-.social-icon:hover {
-  opacity: 1;
-  transform: translateY(-10px) scale(1.2);
-  color: #60a5fa;
-  filter:
-    drop-shadow(0 0 12px rgba(96,165,250,0.7))
-    drop-shadow(0 0 25px rgba(37,99,235,0.4));
-}
-
-/* =========================
-   🔥 MORE VISIBLE INFO CARD
-========================= */
 .info-card {
   background: linear-gradient(
     135deg,
-    rgba(37, 99, 235, 0.25),
-    rgba(255, 255, 255, 0.85)
+    rgba(255, 255, 255, 0.75),
+    rgba(37, 99, 235, 0.15)
   );
-
-  backdrop-filter: blur(14px);
-
-  border: 1px solid rgba(37, 99, 235, 0.35);
-
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow:
     0 15px 40px rgba(0, 0, 0, 0.15),
     0 0 25px rgba(37, 99, 235, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-
-  transition: all 0.4s ease;
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
-/* 🚀 stronger hover pop */
-.info-card:hover {
-  transform: translateY(-6px);
+.stats-card {
+  background: linear-gradient(
+    135deg,
+    rgba(240, 236, 236, 0.99),
+    rgba(211, 239, 242, 0.8)
+  );
+
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 20px;
+  padding: 30px;
 
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.25),
-    0 0 35px rgba(37, 99, 235, 0.35);
+    0 15px 40px rgba(0, 0, 0, 0.2),
+    0 0 25px rgba(110, 179, 236, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  transition: all 0.5s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.stat-label {
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.social-icon {
+  color: white;
+  transition: 0.3s;
+}
+.social-icon:hover {
+  transform: translateY(-8px) scale(1.2);
+}
+
+/* 🔥 ONLY ADDITION — REAL GLASS HOVER EFFECT */
+.info-card p {
+  transition: all 0.35s ease;
+  border-radius: 12px;
+}
+
+.info-card:hover p {
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 </style>
