@@ -50,7 +50,7 @@
         </div>
       </li>
       <li>
-        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#achievements" class="nav-link">Pricing</a>
       </li>
       <li>
         <a href="#contact" class="nav-link">Contact</a>
