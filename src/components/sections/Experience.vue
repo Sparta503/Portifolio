@@ -34,6 +34,7 @@
                   {{ item.company }} • {{ item.start }} - {{ item.end }}
                 </p>
 
+                <!-- Tools -->
                 <div v-if="item.tools?.length" class="flex flex-wrap gap-2 mb-3">
                   <span
                     v-for="tool in item.tools"
@@ -44,13 +45,18 @@
                   </span>
                 </div>
 
-                <ul class="text-sm text-gray-600 space-y-1">
-                  <li v-for="point in item.highlights" :key="point">
-                    • {{ point }}
-                  </li>
-                </ul>
+                <!-- ⭐ GLASS HIGHLIGHTS CARD (NEW) -->
+                <div class="mt-4 p-4 rounded-xl bg-white/70 backdrop-blur-md border border-white/40 shadow-inner">
+                  <ul class="text-sm text-gray-700 space-y-2">
+                    <li v-for="point in item.highlights" :key="point">
+                      • {{ point }}
+                    </li>
+                  </ul>
+                </div>
+
               </div>
             </div>
+
             <div v-else></div>
 
             <!-- CENTER ICON -->
@@ -76,6 +82,7 @@
                   {{ item.company }} • {{ item.start }} - {{ item.end }}
                 </p>
 
+                <!-- Tools -->
                 <div v-if="item.tools?.length" class="flex flex-wrap gap-2 mb-3">
                   <span
                     v-for="tool in item.tools"
@@ -86,13 +93,18 @@
                   </span>
                 </div>
 
-                <ul class="text-sm text-gray-600 space-y-1">
-                  <li v-for="point in item.highlights" :key="point">
-                    • {{ point }}
-                  </li>
-                </ul>
+                <!-- ⭐ GLASS HIGHLIGHTS CARD (NEW) -->
+                <div class="mt-4 p-4 rounded-xl bg-white/70 backdrop-blur-md border border-white/40 shadow-inner">
+                  <ul class="text-sm text-gray-700 space-y-2">
+                    <li v-for="point in item.highlights" :key="point">
+                      • {{ point }}
+                    </li>
+                  </ul>
+                </div>
+
               </div>
             </div>
+
             <div v-else></div>
 
           </div>
@@ -117,19 +129,17 @@ type ExperienceItem = {
 
 const experience: ExperienceItem[] = [
   {
-
-
     company: 'Data Age Solutions Harare',
     role: 'Mobile Developer',
     start: '',
     end: '',
     tools: ['React Native', 'Expo', 'Dart','Django','Framer Motion'],
     highlights: [
-  'Built and optimized cross-platform mobile applications using React Native and Expo.',
-  'Integrated RESTful APIs and backend services.',
-  'Managed source control and collaborative development workflows using Git and GitHub.',
-  'Containerized supporting services using Docker.'
-]
+      'Built and optimized cross-platform mobile applications using React Native and Expo.',
+      'Integrated RESTful APIs and backend services.',
+      'Managed source control and collaborative development workflows using Git and GitHub.',
+      'Containerized supporting services using Docker.'
+    ]
   },
   {
     company: 'ZB Bank Rusape',
