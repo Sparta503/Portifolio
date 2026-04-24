@@ -1,6 +1,7 @@
 <template>
   <section id="education" class="py-20 bg-blue-600 text-white">
     <div class="max-w-6xl mx-auto px-6">
+
       <h2 class="text-3xl font-bold text-center mb-12">Education</h2>
 
       <!-- EDUCATION LIST -->
@@ -11,36 +12,34 @@
           <article
             v-for="item in education"
             :key="item.school + item.program"
-            class="edu-card bg-gray-800/60 border border-white/5 rounded-xl p-6 hover:scale-[1.03] hover:bg-gray-800/70 hover:shadow-2xl hover:shadow-red-500/50 hover:ring-4 hover:ring-red-500/30 transition-all duration-500 ease-out"
+            class="edu-card glass-card p-6 rounded-xl hover:scale-[1.03] transition-all duration-500"
           >
             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
               <div>
-                <h4 class="text-xl font-semibold">{{ item.program }}</h4>
-                <p class="text-gray-300">{{ item.school }}</p>
-                <p v-if="item.location" class="text-gray-400">{{ item.location }}</p>
+                <h4 class="text-xl font-semibold text-gray-900">{{ item.program }}</h4>
+                <p class="text-gray-700">{{ item.school }}</p>
+                <p v-if="item.location" class="text-gray-500">{{ item.location }}</p>
               </div>
 
-              <p class="text-sm text-gray-400 sm:text-right">
+              <p class="text-sm text-gray-500 sm:text-right">
                 {{ item.start }} - {{ item.end }}
               </p>
             </div>
 
-            <p v-if="item.details" class="mt-4 text-gray-300 leading-relaxed">
+            <p v-if="item.details" class="mt-4 glass-paragraph">
               {{ item.details }}
             </p>
 
-            <div v-if="item.highlights.length" class="mt-4">
-              <ul class="grid gap-2 text-gray-300">
-                <li v-for="point in item.highlights" :key="point">
-                  • {{ point }}
-                </li>
-              </ul>
-            </div>
+            <ul v-if="item.highlights.length" class="mt-3 glass-paragraph space-y-1 text-sm">
+              <li v-for="point in item.highlights" :key="point">
+                • {{ point }}
+              </li>
+            </ul>
           </article>
         </div>
       </div>
 
-      <div class="my-12 h-px bg-white/10"></div>
+      <div class="my-12 h-px bg-white/20"></div>
 
       <!-- HIGHLIGHTS -->
       <div id="education-categories" class="scroll-mt-28">
@@ -48,67 +47,54 @@
 
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
-          <!-- Dev Mindset -->
-          <div class="edu-card bg-gray-800/60 border border-white/5 rounded-xl p-5 hover:bg-gray-800/80 hover:scale-[1.03] hover:shadow-2xl hover:shadow-red-500/50 hover:ring-4 hover:ring-red-500/30 transition-all duration-500 ease-out">
-            <div class="flex items-center gap-3 mb-3">
-              <Newspaper class="w-6 h-6 text-blue-400" />
-              <h4 class="font-semibold text-lg">Dev MindSet</h4>
+          <!-- 1. TECH STACK (NOW FIRST) -->
+          <div class="glass-card p-5 rounded-xl">
+            <h4 class="font-semibold text-lg mb-3 text-gray-900">Tech Stack</h4>
+
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="glass-tag">Vue</span>
+              <span class="glass-tag">React Native</span>
+              <span class="glass-tag">Node.js</span>
+              <span class="glass-tag">Python (AI/ML)</span>
+              <span class="glass-tag">Laravel</span>
+              <span class="glass-tag">GitHub</span>
+              <span class="glass-tag">Docker</span>
+              <span class="glass-tag">Django</span>
+              <span class="glass-tag">Java</span>
+              <span class="glass-tag">Angular</span>
+              <span class="glass-tag">Flutter</span>
             </div>
-            <p class="text-gray-300 text-sm leading-relaxed">
-              I focus on more than code and design,
-              I build solutions that solve real-world problems.
-            </p>
           </div>
 
-          <!-- Certifications -->
-          <div class="edu-card bg-gray-800/60 border border-white/5 rounded-xl p-5 hover:bg-gray-800/80 hover:scale-[1.03] hover:shadow-2xl hover:shadow-red-500/50 hover:ring-4 hover:ring-red-500/30 transition-all duration-500 ease-out">
-            <div class="flex items-center gap-3 mb-3">
-              <Award class="w-6 h-6 text-yellow-400" />
-              <h4 class="font-semibold text-lg">Certifications</h4>
-            </div>
-            <ul class="text-gray-300 text-sm space-y-1">
+          <!-- 2. CERTIFICATIONS -->
+          <div class="glass-card p-5 rounded-xl">
+            <h4 class="font-semibold text-lg mb-3 text-gray-900">Certifications</h4>
+
+            <ul class="glass-paragraph text-sm space-y-1">
               <li>• Oracle Cloud Infrastructure (OCI) Foundations</li>
               <li>• DevOps & Cloud Deployment Practices</li>
               <li>• AI & Machine Learning Fundamentals</li>
             </ul>
           </div>
 
-          <!-- Tech Stack -->
-          <div class="edu-card bg-gray-800/60 border border-white/5 rounded-xl p-5 hover:bg-gray-800/80 hover:scale-[1.03] hover:shadow-2xl hover:shadow-red-500/50 hover:ring-4 hover:ring-red-500/30 transition-all duration-500 ease-out">
-            <div class="flex items-center gap-3 mb-3">
-              <Wrench class="w-6 h-6 text-green-400" />
-              <h4 class="font-semibold text-lg">Tech Stack</h4>
-            </div>
+          <!-- 3. DEV MINDSET (NOW LAST) -->
+          <div class="glass-card p-5 rounded-xl">
+            <h4 class="font-semibold text-lg mb-3 text-gray-900">Dev MindSet</h4>
 
-            <!-- PILL TAGS -->
-            <div class="flex flex-wrap gap-2 text-sm text-gray-200">
-              <span class="tech-pill">Vue</span>
-              <span class="tech-pill">React Native</span>
-              <span class="tech-pill">Node.js</span>
-              <span class="tech-pill">Python (AI/ML)</span>
-              <span class="tech-pill">Laravel</span>
-              <span class="tech-pill">GitHub</span>
-              <span class="tech-pill">Docker</span>
-              <span class="tech-pill">Django</span>
-              <span class="tech-pill">Java</span>
-              <span class="tech-pill">Angular</span>
-              <span class="tech-pill">Flutter</span>
-            </div>
+            <p class="glass-paragraph text-sm">
+              I focus on more than code and design,
+              I build solutions that solve real-world problems.
+            </p>
           </div>
 
         </div>
       </div>
+
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import {
-  Newspaper,
-  Award,
-  Wrench
-} from 'lucide-vue-next'
-
 type EducationItem = {
   school: string
   program: string
@@ -138,54 +124,86 @@ const education: EducationItem[] = [
 </script>
 
 <style scoped>
-.edu-card {
-  transform-style: preserve-3d;
-  transform: perspective(1200px) translateY(0px) rotateX(2deg);
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
 
   box-shadow:
-    0 10px 25px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.05);
+    0 18px 50px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
-  backdrop-filter: blur(10px);
-
-  transition:
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.6s ease;
+  transition: all 0.4s ease;
 }
 
-/* 🌊 softer premium hover (same vibe as pricing) */
-.edu-card:hover {
-  transform:
-    perspective(1200px)
-    translateY(-12px)
-    scale(1.04);
+.glass-card:hover {
+  transform: translateY(-10px);
+}
+
+.glass-paragraph {
+  padding: 12px 14px;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(37, 99, 235, 0.18)
+  );
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  color: rgba(15, 23, 42, 0.85);
 
   box-shadow:
-    0 25px 60px rgba(0,0,0,0.55),
-    0 0 25px rgba(239, 68, 68, 0.35),
-    0 0 20px rgba(59,130,246,0.25),
-    inset 0 1px 0 rgba(255,255,255,0.08);
+    0 14px 30px rgba(0, 0, 0, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  transition: all 0.35s ease;
 }
 
-/* ✨ TECH PILLS (soft premium version) */
-.tech-pill {
-  padding: 6px 12px;
+.glass-paragraph:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.glass-tag {
+  padding: 6px 14px;
   border-radius: 9999px;
 
-  background: rgba(59, 130, 246, 0.15);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(37, 99, 235, 0.18)
+  );
 
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
 
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  color: rgba(15, 23, 42, 0.85);
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.20),
+    0 0 25px rgba(37, 99, 235, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+  transition: all 0.35s ease;
 }
 
-.tech-pill:hover {
+.glass-tag:hover {
   transform: translateY(-4px) scale(1.08);
 
-  background: rgba(59, 130, 246, 0.35);
   box-shadow:
-    0 10px 25px rgba(0,0,0,0.25),
-    0 0 15px rgba(59,130,246,0.6);
+    0 22px 45px rgba(0, 0, 0, 0.28),
+    0 0 35px rgba(37, 99, 235, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 </style>
