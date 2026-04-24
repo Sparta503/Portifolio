@@ -67,7 +67,7 @@
 
       <!-- Bottom -->
       <div class="text-center text-xl font-medium text-gray-500">
-        &copy; {{ year }} @ Abel. All rights reserved. Built with ❤️Vue.js
+        &copy; {{ year }} @ Abel. All rights reserved. Built with ❤️Vue
       </div>
 
     </div>
