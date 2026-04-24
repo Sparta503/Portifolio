@@ -15,7 +15,7 @@
         <div 
           v-for="project in projects" 
           :key="project.title"
-          class="shadow-lg hover:scale-[1.06] hover:shadow-2xl hover:shadow-red-500/70 hover:ring-4 hover:ring-red-500/40 transition-all duration-200 bg-white"
+          class="project-card shadow-lg bg-white"
         >
           
           <!-- IMAGE -->
@@ -62,7 +62,7 @@
 
             <a 
               :href="project.link"
-              class="mt-auto inline-flex items-center justify-center gap-2 bg-blue-500 hover:bg-transparent hover:text-blue-500 transition text-white rounded-lg px-4 py-3 shadow-lg shadow-blue-500/50"
+              class="case-btn mt-auto inline-flex items-center justify-center gap-2"
             >
               <span class="mr-2">Case Study →</span>
               <span class="bg-blue-500/20 text-blue-500 rounded-full px-1">
@@ -77,8 +77,8 @@
       </div>
 
       <div class="mt-16 text-center">
-        <a href="#contact" class="bg-black hover:bg-gray-900 transition text-white rounded-lg px-4 py-3 shadow-lg shadow-gray-900/50">
-          More Projects 
+        <a href="#contact" class="more-btn">
+          More Projects
         </a>
       </div>
 
@@ -87,8 +87,6 @@
 </template>
 
 <script setup lang="ts">
-
-// ✅ Use @ alias (Vite standard)
 import img1 from "@/assets/Hospital mobile.png"
 import img2 from "@/assets/facebook markting.png"
 import img3 from "@/assets/Hospital Mnagement.png"
@@ -106,7 +104,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: " Mobile Services Hospital Application",
+    title: "Mobile Services Hospital Application",
     description: "A mobile app designed to streamline hospital services, including patient management, appointments, and real-time communication.",
     image: img1,
     link: "https://github.com/Sparta503/hospital-mobile-app",
@@ -124,14 +122,14 @@ const projects: Project[] = [
     description: "A full-stack system with role-based access control for managing hospital operations, staff, and patient workflows.",
     image: img3,
     link: "https://github.com/Sparta503/hospital-management-system",
-    languages: ["React",  "Java","MongoDB"]
+    languages: ["React", "Java", "MongoDB"]
   },
   {
     title: "Device Tracking Web & Mobile Application",
     description: "A cross-platform solution for tracking devices in real-time with location monitoring and reporting features.",
     image: img4,
     link: "https://github.com/Sparta503/device-tracking-app",
-    languages: ["React", "React Native","Firebase"]
+    languages: ["React", "React Native", "Firebase"]
   },
   {
     title: "Brand Advertisement Web Application",
@@ -148,5 +146,61 @@ const projects: Project[] = [
     languages: ["React", "Tailwind CSS", "Node.js"]
   }
 ]
-
 </script>
+
+<style scoped>
+/* 🌊 PREMIUM PROJECT CARD (soft pricing-style hover) */
+.project-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+
+  transform: perspective(1200px) translateY(0px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* 🚀 soft lift + glow */
+.project-card:hover {
+  transform: translateY(-12px) scale(1.05);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.45),
+    0 0 25px rgba(59,130,246,0.35);
+}
+
+/* 🔘 case study button */
+.case-btn {
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #3b82f6;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+/* glow hover */
+.case-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow:
+    0 0 20px rgba(59,130,246,0.6),
+    0 10px 25px rgba(0,0,0,0.25);
+  background: #2563eb;
+}
+
+/* 🔵 bottom button */
+.more-btn {
+  background: black;
+  padding: 12px 18px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* glow hover */
+.more-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+</style>
