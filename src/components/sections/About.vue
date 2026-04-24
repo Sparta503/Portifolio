@@ -56,7 +56,7 @@
           <!-- BUTTONS -->
           <div class="mt-6 flex gap-4">
             <a href="#projects" class="glow-btn">⬇ My Projects</a>
-            <a href="#" class="glow-btn">⬇ Download CV</a>
+            <a href="/Abel_Chomunodisa_Resume.pdf" class="glow-btn" @click.prevent="downloadCv">⬇ Download CV</a>
           </div>
         </div>
 
@@ -94,6 +94,31 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue"
 import tkayLogo from "../../assets/tkay.png"
+
+const downloadCv = async () => {
+  const url = "/Abel_Chomunodisa_Resume.pdf"
+
+  const res = await fetch(url)
+  if (!res.ok) throw new Error("Failed to download CV")
+
+  const contentType = res.headers.get("content-type") || ""
+  if (!contentType.includes("pdf")) {
+    throw new Error("CV file was not served as a PDF. Check that the file exists in /public and the URL is correct.")
+  }
+
+  const buffer = await res.arrayBuffer()
+  const blob = new Blob([buffer], { type: "application/pdf" })
+  const objectUrl = URL.createObjectURL(blob)
+
+  const link = document.createElement("a")
+  link.href = objectUrl
+  link.download = "Abel_Chomunodisa_Resume.pdf"
+  document.body.appendChild(link)
+  link.click()
+  link.remove()
+
+  URL.revokeObjectURL(objectUrl)
+}
 
 const statsRef = ref<HTMLElement | null>(null)
 
