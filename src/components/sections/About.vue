@@ -111,7 +111,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue"
 import tkayLogo from "../../assets/tkay.png"
-import ThreeBackground from "./threeBackground.vue"
+import ThreeBackground from "./ThreeBackground.vue"
 
 const isDownloading = ref(false)
 const isDownloaded = ref(false)
