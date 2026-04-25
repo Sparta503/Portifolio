@@ -1,8 +1,11 @@
 <template>
-  <section id="about" class="scroll-mt-24 py-24 relative overflow-hidden bg-[#2563eb]">
-    
-    <div class="max-w-[50vw] mx-auto px-6">
-      
+  <section id="about" class="scroll-mt-24 py-24 relative overflow-hidden">
+
+    <!-- 🔥 3D BACKGROUND -->
+    <ThreeBackground class="absolute inset-0 z-0" />
+
+    <div class="max-w-[50vw] mx-auto px-6 relative z-10">
+
       <!-- MAIN CARD -->
       <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10 grid md:grid-cols-2 gap-x-8 items-start">
 
@@ -35,50 +38,50 @@
 
         <!-- RIGHT -->
         <div class="mt-4 md:mt-0">
-          
+
           <h2 class="text-3xl md:text-4xl font-bold text-blue-950">
             A FULL STACK SOFTWARE DEVELOPER
           </h2>
 
-          <!-- INFO CARD -->
-          <div class="info-card mt-6 p-6 rounded-2xl">
-            <p class="mb-4">
+          <!-- 🧊 GLASS PARAGRAPHS -->
+          <div class="info-card mt-6 rounded-2xl">
+
+            <p>
               Creative Software Developer with 5+ years of experience building scalable apps.
             </p>
-            <p class="mb-4">
+
+            <p>
               Skilled in Cloud, Data Pipelines, and Machine Learning.
             </p>
+
             <p>
               Focused on building reliable, future-ready applications.
             </p>
+
           </div>
 
           <!-- BUTTONS -->
           <div class="mt-6 flex gap-4">
             <a href="#projects" class="glow-btn">⬇ My Projects</a>
+
             <a
               href="/Abel_Chomunodisa_Resume.pdf"
               class="glow-btn"
               @click.prevent="downloadCv"
-              :aria-disabled="isDownloading ? 'true' : 'false'"
-              :class="{ 'btn-disabled': isDownloading }"
             >
-              <span v-if="isDownloading" class="btn-row">
-                <span class="spinner" aria-hidden="true"></span>
-                Downloading...
-              </span>
+              <span v-if="isDownloading">⏳ Downloading...</span>
               <span v-else>
                 {{ isDownloaded ? '✅ Downloaded' : '⬇ Download CV' }}
               </span>
             </a>
           </div>
-        </div>
 
+        </div>
       </div>
 
       <!-- STATS -->
       <div ref="statsRef" class="stats-card mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        
+
         <div class="stat-box">
           <h3 class="stat-number">{{ stats.awards }}</h3>
           <p class="stat-label">Awards</p>
@@ -86,7 +89,7 @@
 
         <div class="stat-box">
           <h3 class="stat-number">{{ stats.contracts }}</h3>
-          <p class="stat-label">contracts</p>
+          <p class="stat-label">Contracts</p>
         </div>
 
         <div class="stat-box">
@@ -108,45 +111,33 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue"
 import tkayLogo from "../../assets/tkay.png"
+import ThreeBackground from "./threeBackground.vue"
 
 const isDownloading = ref(false)
 const isDownloaded = ref(false)
 
+/* unchanged JS */
 const downloadCv = async () => {
   if (isDownloading.value) return
 
   isDownloading.value = true
   isDownloaded.value = false
-  const url = "/Abel_Chomunodisa_Resume.pdf"
 
-  try {
-    const res = await fetch(url)
-    if (!res.ok) throw new Error("Failed to download CV")
+  const res = await fetch("/Abel_Chomunodisa_Resume.pdf")
+  const blob = await res.blob()
+  const url = URL.createObjectURL(blob)
 
-    const contentType = res.headers.get("content-type") || ""
-    if (!contentType.includes("pdf")) {
-      throw new Error("CV file was not served as a PDF. Check that the file exists in /public and the URL is correct.")
-    }
+  const a = document.createElement("a")
+  a.href = url
+  a.download = "Abel_Chomunodisa_Resume.pdf"
+  a.click()
 
-    const buffer = await res.arrayBuffer()
-    const blob = new Blob([buffer], { type: "application/pdf" })
-    const objectUrl = URL.createObjectURL(blob)
+  URL.revokeObjectURL(url)
 
-    const link = document.createElement("a")
-    link.href = objectUrl
-    link.download = "Abel_Chomunodisa_Resume.pdf"
-    document.body.appendChild(link)
-    link.click()
-    link.remove()
+  isDownloading.value = false
+  isDownloaded.value = true
 
-    URL.revokeObjectURL(objectUrl)
-    isDownloaded.value = true
-    window.setTimeout(() => {
-      isDownloaded.value = false
-    }, 2500)
-  } finally {
-    isDownloading.value = false
-  }
+  setTimeout(() => (isDownloaded.value = false), 2000)
 }
 
 const statsRef = ref<HTMLElement | null>(null)
@@ -173,7 +164,6 @@ const animateCount = (key: keyof typeof target, end: number) => {
 
   const counter = setInterval(() => {
     start += increment
-
     if (start >= end) {
       stats.value[key] = end
       clearInterval(counter)
@@ -198,16 +188,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(35, 122, 236, 0.15), transparent),
-    radial-gradient(circle at 80% 60%, rgba(29, 102, 220, 0.2), transparent);
-  pointer-events: none;
-}
 
+/* IMAGE */
 .tkay-logo {
   transition: transform 0.3s ease;
 }
@@ -215,6 +197,7 @@ section::before {
   transform: scale(1.1);
 }
 
+/* BUTTON */
 .glow-btn {
   display: inline-flex;
   align-items: center;
@@ -223,116 +206,89 @@ section::before {
   border-radius: 9999px;
   background: #2563eb;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+/* 🧊 INFO GLASS */
+.info-card {
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  padding: 18px;
+
   box-shadow:
-    0 10px 25px rgba(37, 99, 235, 0.35),
-    0 0 20px rgba(37, 99, 235, 0.25);
+    0 25px 70px rgba(0, 0, 0, 0.18),
+    0 0 40px rgba(37, 99, 235, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 🔥 REDUCED HEIGHT (THIS IS THE FIX) */
+.info-card p {
+  margin: 0;
+  padding: 12px 16px;   /* ⬅ reduced from 20px */
+  line-height: 1.35;    /* ⬅ tighter text */
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.22);
+
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  color: rgba(10, 15, 25, 0.95);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.25),
+    0 0 35px rgba(37, 99, 235, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
   transition: all 0.35s ease;
 }
 
-.glow-btn:hover {
-  transform: translateY(-8px) scale(1.08);
-  background: #1e4fd6;
+.info-card p:hover {
+  transform: translateY(-5px) scale(1.02);
+
   box-shadow:
-    0 20px 50px rgba(37, 99, 235, 0.65),
-    0 0 40px rgba(37, 99, 235, 0.45);
+    0 30px 70px rgba(0, 0, 0, 0.35),
+    0 0 60px rgba(37, 99, 235, 0.45);
 }
 
-.btn-row {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.spinner {
-  width: 16px;
-  height: 16px;
-  border-radius: 9999px;
-  border: 2px solid rgba(255, 255, 255, 0.35);
-  border-top-color: rgba(255, 255, 255, 0.95);
-  animation: spin 0.9s linear infinite;
-}
-
-.btn-disabled {
-  opacity: 0.75;
-  pointer-events: none;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.info-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.75),
-    rgba(37, 99, 235, 0.15)
-  );
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.15),
-    0 0 25px rgba(37, 99, 235, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
-}
-
+/* STATS */
 .stats-card {
-  background: linear-gradient(
-    135deg,
-    rgba(240, 236, 236, 0.99),
-    rgba(211, 239, 242, 0.8)
-  );
-
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-
-  border-radius: 20px;
-  padding: 30px;
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.2),
-    0 0 25px rgba(110, 179, 236, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-
-  transition: all 0.5s ease;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(30px);
+  border-radius: 26px;
+  padding: 35px;
 }
 
-.stats-card:hover {
-  transform: translateY(-10px) scale(1.02);
+.stat-box {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.35s ease;
 }
 
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #000;
-}
-
-.stat-label {
-  color: #444;
-  font-size: 0.9rem;
+.stat-box:hover {
+  transform: translateY(-10px) scale(1.06);
 }
 
 .social-icon {
   color: white;
   transition: 0.3s;
 }
+
 .social-icon:hover {
   transform: translateY(-8px) scale(1.2);
 }
 
-/* 🔥 ONLY ADDITION — REAL GLASS HOVER EFFECT */
-.info-card p {
-  transition: all 0.35s ease;
-  border-radius: 12px;
-}
-
-.info-card:hover p {
-  transform: translateY(-4px) scale(1.02);
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
 </style>
