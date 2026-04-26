@@ -1,6 +1,9 @@
 <template>
   <div>
     <Hero />
+
+    <ThreeBackground />
+
     <About />
     <Projects />
     <Skills />
@@ -20,4 +23,5 @@ import Experience from '../sections/Experience.vue'
 import Education from  '../sections/Education.vue'
 import Achievements from '../sections/Pricing.vue'
 import Contact from '../sections/Contact.vue'
+import ThreeBackground from '../sections/ThreeBackground.vue'
 </script>
