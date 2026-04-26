@@ -1,6 +1,6 @@
 <template>
-  <section id="skills" class="py-24 bg-blue-600 text-white">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+  <section id="skills" class="py-24 bg-transparent text-white relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
 
       <!-- LEFT SIDE (Text) -->
       <div>
@@ -22,7 +22,7 @@
           Also Experienced in Python for building data pipelines and training machine learning models.
         </p>
 
-        <!-- 💜 PURPLE GLASS BUTTON -->
+        <!-- PURPLE GLASS BUTTON -->
         <a
           href="https://wa.me/263780488779"
           target="_blank"
@@ -95,7 +95,7 @@
 
 <style scoped>
 
-/* 🔮 GLASS PARAGRAPH */
+/* GLASS PARAGRAPH */
 .glass-paragraph {
   background: linear-gradient(
     135deg,
