@@ -11,6 +11,8 @@ const container = ref(null)
 let scene, camera, renderer, mesh
 let mouseX = 0, mouseY = 0
 let targetX = 0, targetY = 0
+let onMouseMove
+let rafId
 
 const vertexShader = `
 varying vec2 vUv;
@@ -110,10 +112,12 @@ onMounted(() => {
   scene.add(mesh)
 
   // VERY SUBTLE MOUSE (barely noticeable premium touch)
-  window.addEventListener("mousemove", (e) => {
+  onMouseMove = (e) => {
     targetX = e.clientX / window.innerWidth
     targetY = e.clientY / window.innerHeight
-  })
+  }
+
+  window.addEventListener("mousemove", onMouseMove)
 
   window.addEventListener("resize", onResize)
 
@@ -121,7 +125,7 @@ onMounted(() => {
 })
 
 function animate() {
-  requestAnimationFrame(animate)
+  rafId = requestAnimationFrame(animate)
 
   const time = performance.now() * 0.001
 
@@ -141,6 +145,15 @@ function onResize() {
 
 onBeforeUnmount(() => {
   window.removeEventListener("resize", onResize)
+  if (onMouseMove) window.removeEventListener("mousemove", onMouseMove)
+  if (rafId) cancelAnimationFrame(rafId)
+
+  if (renderer) {
+    renderer.dispose()
+    if (renderer.domElement && renderer.domElement.parentNode) {
+      renderer.domElement.parentNode.removeChild(renderer.domElement)
+    }
+  }
 })
 </script>
 
