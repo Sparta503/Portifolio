@@ -1,13 +1,10 @@
 <template>
-  <section id="about" class="scroll-mt-24 py-24 relative overflow-hidden">
+  <section id="about" class="scroll-mt-24 py-16 sm:py-24 relative overflow-hidden">
 
-    <!-- 🔥 3D BACKGROUND -->
-    <ThreeBackground class="absolute inset-0 z-0" />
-
-    <div class="max-w-[50vw] mx-auto px-6 relative z-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
 
       <!-- MAIN CARD -->
-      <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10 grid md:grid-cols-2 gap-x-8 items-start">
+      <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10 grid md:grid-cols-2 gap-x-8 gap-y-10 items-start">
 
         <!-- LEFT -->
         <div class="flex justify-center">
@@ -15,7 +12,7 @@
             <img
               :src="tkayLogo"
               alt="Tkay"
-              class="rounded-lg object-contain w-[280px] h-[300px] tkay-logo"
+              class="rounded-lg object-contain w-[240px] h-[260px] sm:w-[280px] sm:h-[300px] tkay-logo"
             />
 
             <!-- SOCIALS -->
@@ -61,7 +58,7 @@
           </div>
 
           <!-- BUTTONS -->
-          <div class="mt-6 flex gap-4">
+          <div class="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a href="#projects" class="glow-btn">⬇ My Projects</a>
 
             <a
@@ -111,7 +108,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue"
 import tkayLogo from "../../assets/tkay.png"
-import ThreeBackground from "./ThreeBackground.vue"
 
 const isDownloading = ref(false)
 const isDownloaded = ref(false)
