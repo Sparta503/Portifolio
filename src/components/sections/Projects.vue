@@ -1,6 +1,6 @@
 <template>
-  <section id="projects" class="py-20 bg-blue-600 text-white">
-    <div class="max-w-6xl mx-auto px-6">
+  <section id="projects" class="py-20 bg-transparent text-white relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
 
       <!-- Title -->
       <h2 class="text-4xl font-bold text-center mb-4">Portfolio</h2>
