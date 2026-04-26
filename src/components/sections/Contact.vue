@@ -1,6 +1,6 @@
 <template>
-  <section id="contact" class="py-24 bg-blue-600 text-white">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+  <section id="contact" class="py-24 bg-transparent text-white relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
 
       <!-- LEFT SIDE (FORM) -->
       <div class="form-card bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-10 border border-gray-800">
