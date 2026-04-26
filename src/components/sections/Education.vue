@@ -1,6 +1,6 @@
 <template>
-  <section id="education" class="py-20 bg-blue-600 text-white">
-    <div class="max-w-6xl mx-auto px-6">
+  <section id="education" class="py-20 bg-transparent text-white relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
 
       <h2 class="text-3xl font-bold text-center mb-12">Education</h2>
 
