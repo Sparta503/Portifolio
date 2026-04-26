@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="fixed top-0 left-0 w-full z-50 grid grid-cols-[auto_1fr_auto] items-center px-6 py-4 bg-blue-600 text-white shadow"
+    class="fixed top-0 left-0 w-full z-50 grid grid-cols-[auto_1fr_auto] items-center px-4 sm:px-6 py-4 bg-blue-600 text-white shadow"
   >
     <!-- Logo -->
     <div class="flex items-center">
@@ -14,7 +14,7 @@
     </div>
 
     <!-- Navigation Links -->
-    <ul class="flex justify-center gap-6">
+    <ul class="hidden lg:flex justify-center gap-6">
       <li>
         <a href="#" class="nav-link">Home</a>
       </li>
@@ -50,7 +50,7 @@
         </div>
       </li>
       <li>
-        <a href="#achievements" class="nav-link">Pricing</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
       </li>
       <li>
         <a href="#contact" class="nav-link">Contact</a>
@@ -58,7 +58,25 @@
     </ul>
 
     <!-- Right Side -->
-    <div class="flex items-center gap-3 ml-10 mr-10">
+    <div class="flex items-center justify-end gap-2 sm:gap-3 ml-4 sm:ml-10 mr-0 sm:mr-10">
+      <!-- Mobile Menu Toggle -->
+      <button
+        type="button"
+        class="lg:hidden p-2 rounded-lg hover:bg-white/10"
+        aria-label="Open menu"
+        :aria-expanded="isMobileMenuOpen ? 'true' : 'false'"
+        @click="isMobileMenuOpen = !isMobileMenuOpen"
+      >
+        <svg v-if="!isMobileMenuOpen" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16" />
+          <path d="M4 12h16" />
+          <path d="M4 18h16" />
+        </svg>
+        <svg v-else class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18" />
+          <path d="M6 6l12 12" />
+        </svg>
+      </button>
       
       <!-- Search -->
       <div class="hidden sm:flex items-center gap-2 border border-white/30 rounded-lg px-3 py-2 bg-white/10">
@@ -80,11 +98,33 @@
         </svg>
       </a>
     </div>
+
+    <!-- Mobile Menu -->
+    <div
+      v-if="isMobileMenuOpen"
+      class="lg:hidden absolute left-0 right-0 top-full bg-blue-600/95 backdrop-blur-md border-t border-white/10"
+    >
+      <div class="px-4 sm:px-6 py-4">
+        <div class="grid gap-2">
+          <a href="#" class="mobile-link" @click="isMobileMenuOpen = false">Home</a>
+          <a href="#about" class="mobile-link" @click="isMobileMenuOpen = false">About</a>
+          <a href="#projects" class="mobile-link" @click="isMobileMenuOpen = false">Projects</a>
+          <a href="#skills" class="mobile-link" @click="isMobileMenuOpen = false">Skills</a>
+          <a href="#experience" class="mobile-link" @click="isMobileMenuOpen = false">Experience</a>
+          <a href="#education" class="mobile-link" @click="isMobileMenuOpen = false">Education</a>
+          <a href="#pricing" class="mobile-link" @click="isMobileMenuOpen = false">Pricing</a>
+          <a href="#contact" class="mobile-link" @click="isMobileMenuOpen = false">Contact</a>
+        </div>
+      </div>
+    </div>
   </nav>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue"
 import tkayLogo from "../assets/tkay.png"
+
+const isMobileMenuOpen = ref(false)
 </script>
 
 <style scoped>
@@ -92,5 +132,10 @@ import tkayLogo from "../assets/tkay.png"
   @apply inline-flex items-center px-3 py-2 rounded-lg font-bold text-base text-white/90 
          hover:text-white hover:shadow-[0_8px_24px_rgba(0,0,0,0.18)] 
          hover:-translate-y-0.5 transition-all duration-200;
+}
+
+.mobile-link {
+  @apply w-full inline-flex items-center justify-between px-4 py-3 rounded-xl font-semibold text-white/95
+         hover:bg-white/10 transition-all duration-200;
 }
 </style>
