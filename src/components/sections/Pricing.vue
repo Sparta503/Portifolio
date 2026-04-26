@@ -1,6 +1,6 @@
 <template>
-  <section id="pricing" class="py-24 bg-blue-600 text-white">
-    <div class="max-w-6xl mx-auto px-6">
+  <section id="pricing" class="py-24 bg-transparent text-white relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
 
       <!-- Header -->
       <div class="text-center mb-12">
