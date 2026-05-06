@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-900 text-gray-300 py-10">
+  <footer class="relative z-10 bg-[#020617] text-gray-300 py-10 border-t border-white/10">
     <div class="max-w-6xl mx-auto px-6">
 
       <!-- Top Section -->
