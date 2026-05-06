@@ -11,26 +11,25 @@
       <div class="relative">
 
         <!-- Vertical Line (BIGGER AGAIN 🔥) -->
-        <div class="absolute left-1/2 top-0 h-full w-[6px] bg-white/50 -translate-x-1/2 rounded-full"></div>
+        <div class="hidden md:block absolute left-1/2 top-0 h-full w-[6px] bg-white/50 -translate-x-1/2 rounded-full"></div>
 
         <div class="space-y-16">
 
           <div
             v-for="(item, index) in experience"
             :key="item.company + item.role"
-            class="grid grid-cols-3 items-center"
+            class="grid grid-cols-1 md:grid-cols-3 items-start md:items-center gap-4 md:gap-0"
           >
-
-            <!-- LEFT SIDE -->
-            <div v-if="index % 2 === 0" class="flex justify-end pr-8">
+            <!-- LEFT SIDE (desktop only) -->
+            <div v-if="index % 2 === 0" class="hidden md:flex justify-end pr-8">
               <div
-                class="w-full max-w-md bg-white text-gray-800 p-6 rounded-xl shadow-lg
+                class="w-full max-w-md min-w-0 bg-white text-gray-800 p-6 rounded-xl shadow-lg
                        transition-all duration-300 ease-out
                        hover:scale-[1.06] hover:shadow-2xl hover:shadow-red-500/80
                        hover:ring-4 hover:ring-red-500/50"
               >
-                <h3 class="text-lg font-semibold">{{ item.role }}</h3>
-                <p class="text-sm text-gray-500 mb-2">
+                <h3 class="text-lg font-semibold break-words">{{ item.role }}</h3>
+                <p class="text-sm text-gray-500 mb-2 break-words">
                   {{ item.company }} • {{ item.start }} - {{ item.end }}
                 </p>
 
@@ -47,14 +46,12 @@
                     </li>
                   </ul>
                 </div>
-
               </div>
             </div>
+            <div v-else class="hidden md:block"></div>
 
-            <div v-else></div>
-
-            <!-- CENTER ICON (BIGGER 🔥🔥) -->
-            <div class="flex justify-center">
+            <!-- CENTER ICON (desktop only) -->
+            <div class="hidden md:flex justify-center">
               <div
                 class="w-16 h-16 bg-white text-blue-600 rounded-full flex items-center justify-center shadow-2xl border-4 border-blue-600
                        transition-transform duration-300 hover:scale-110 text-2xl"
@@ -63,16 +60,16 @@
               </div>
             </div>
 
-            <!-- RIGHT SIDE -->
-            <div v-if="index % 2 !== 0" class="flex justify-start pl-8">
+            <!-- RIGHT SIDE (desktop only) -->
+            <div v-if="index % 2 !== 0" class="hidden md:flex justify-start pl-8">
               <div
-                class="w-full max-w-md bg-white text-gray-800 p-6 rounded-xl shadow-lg
+                class="w-full max-w-md min-w-0 bg-white text-gray-800 p-6 rounded-xl shadow-lg
                        transition-all duration-300 ease-out
                        hover:scale-[1.06] hover:shadow-2xl hover:shadow-red-500/80
                        hover:ring-4 hover:ring-red-500/50"
               >
-                <h3 class="text-lg font-semibold">{{ item.role }}</h3>
-                <p class="text-sm text-gray-500 mb-2">
+                <h3 class="text-lg font-semibold break-words">{{ item.role }}</h3>
+                <p class="text-sm text-gray-500 mb-2 break-words">
                   {{ item.company }} • {{ item.start }} - {{ item.end }}
                 </p>
 
@@ -89,12 +86,36 @@
                     </li>
                   </ul>
                 </div>
-
               </div>
             </div>
+            <div v-else class="hidden md:block"></div>
 
-            <div v-else></div>
+            <!-- MOBILE CARD -->
+            <div class="md:hidden">
+              <div
+                class="w-full min-w-0 bg-white text-gray-800 p-5 rounded-xl shadow-lg
+                       transition-all duration-300 ease-out"
+              >
+                <h3 class="text-lg font-semibold break-words">{{ item.role }}</h3>
+                <p class="text-sm text-gray-500 mb-2 break-words">
+                  {{ item.company }} • {{ item.start }} - {{ item.end }}
+                </p>
 
+                <div v-if="item.tools?.length" class="flex flex-wrap gap-2 mb-3">
+                  <span v-for="tool in item.tools" :key="tool" class="glass-pill">
+                    {{ tool }}
+                  </span>
+                </div>
+
+                <div class="mt-4 p-4 rounded-xl glass-highlights">
+                  <ul class="text-sm text-gray-700 space-y-2">
+                    <li v-for="point in item.highlights" :key="point">
+                      • {{ point }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
