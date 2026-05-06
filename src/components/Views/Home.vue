@@ -1,16 +1,17 @@
 <template>
-  <div>
-    <Hero />
-
+  <div class="relative min-h-screen">
     <ThreeBackground />
 
-    <About />
-    <Projects />
-    <Skills />
-    <Experience />
-    <Education />
-    <Achievements />
-    <Contact />
+    <div class="relative z-10">
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <Experience />
+      <Education />
+      <Achievements />
+      <Contact />
+    </div>
   </div>
 </template>
 
