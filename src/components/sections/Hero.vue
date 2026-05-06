@@ -1,6 +1,6 @@
 <template>
   <section
-    class="h-[90vh] flex items-center justify-center text-white relative overflow-hidden"
+    class="min-h-screen flex items-center justify-center text-white relative overflow-hidden pt-28 md:pt-32 pb-10 md:pb-14"
     :style="{
       backgroundImage: `url(${heroBg})`,
       backgroundSize: 'cover',
@@ -12,66 +12,66 @@
     <div class="absolute inset-0 bg-black/60"></div>
 
     <!-- LEFT EMAIL -->
-    <div class="hidden md:flex flex-col items-center absolute left-6 top-1/2 -translate-y-1/2 z-30 left-side">
-      <div class="rotate-[-90deg] text-lg md:text-xl font-semibold tracking-[0.2em] text-white/80 hover:text-white transition">
+    <div class="hidden 3xl:flex flex-col items-center absolute left-6 top-1/2 -translate-y-1/2 z-30 left-side">
+      <div class="rotate-[-90deg] text-base 2xl:text-lg font-semibold tracking-[0.16em] text-white/80 hover:text-white transition">
         Chomunodisaa68@gmail.com
       </div>
     </div>
 
     <!-- CONTENT -->
-    <div class="w-full max-w-7xl px-6 relative z-10 mx-auto">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
+    <div class="w-full max-w-[1800px] px-5 sm:px-8 lg:px-12 xl:px-16 relative z-10 mx-auto">
+      <div class="grid lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 items-center">
 
         <!-- LEFT TEXT -->
-        <div class="flex flex-col justify-center md:max-w-xl">
-          <p class="text-lg md:text-xl text-white/80 tracking-widest hero-anim hero-anim-1">
+        <div class="flex flex-col justify-center max-w-3xl">
+          <p class="text-base sm:text-lg xl:text-xl text-white/80 tracking-[0.12em] hero-anim hero-anim-1">
             Hi there! <span class="wave-hand text-3xl">👋</span> I’m ABEL CHOMUNODISA
           </p>
 
           <h1 class="mt-4 leading-none hero-anim hero-anim-2">
-            <span class="block text-5xl md:text-7xl font-extrabold">CREATIVE</span>
+            <span class="block text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-extrabold">CREATIVE</span>
 
-            <span class="block text-5xl md:text-7xl italic font-semibold">
+            <span class="block text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl italic font-semibold">
               <span class="typing-text"></span><span class="cursor">|</span>
             </span>
           </h1>
 
-          <div class="mt-5 flex items-center gap-3 text-sm text-white/70 hero-anim hero-anim-3">
+          <div class="mt-4 sm:mt-5 flex items-center gap-3 text-xs sm:text-sm text-white/70 hero-anim hero-anim-3">
             <span class="h-1.5 w-1.5 bg-white/50 rounded-full"></span>
             BASED IN AFRICA ZIMBABWE
           </div>
 
           <!-- 🔮 ONLY CHANGE: GLASS PARAGRAPH -->
-          <p class="mt-6 hero-anim hero-anim-4 glass-paragraph">
+          <p class="mt-5 sm:mt-6 text-sm sm:text-base xl:text-lg hero-anim hero-anim-4 glass-paragraph">
             I build scalable web and mobile apps with clean UI while leveraging cloud services,
             data pipelines, and machine learning to deliver high-performance solutions.
           </p>
 
           <!-- BUTTONS (UNCHANGED) -->
-          <div class="mt-8 flex gap-4 hero-anim hero-anim-5">
+          <div class="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4 hero-anim hero-anim-5">
             <a href="#projects"
-              class="px-8 py-3 bg-blue-600 rounded-full hover:bg-blue-700 hover:scale-105 hover:-translate-y-1 transition">
+              class="px-6 sm:px-8 py-2.5 sm:py-3 bg-blue-600 rounded-full hover:bg-blue-700 hover:scale-105 hover:-translate-y-1 transition">
               View My Works
             </a>
 
             <a href="#contact"
-              class="px-8 py-3 bg-blue-600 rounded-full hover:bg-blue-700 hover:scale-105 hover:-translate-y-1 transition">
+              class="px-6 sm:px-8 py-2.5 sm:py-3 bg-blue-600 rounded-full hover:bg-blue-700 hover:scale-105 hover:-translate-y-1 transition">
               Contact Me
             </a>
           </div>
         </div>
 
         <!-- RIGHT EMPTY -->
-        <div></div>
+        <div class="hidden xl:block"></div>
       </div>
     </div>
 
     <!-- BLENDED IMAGE (UNCHANGED) -->
-    <div class="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20 hero-anim hero-anim-6">
+    <div class="hidden xl:block absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[38%] 2xl:translate-y-[44%] z-20 hero-anim hero-anim-6">
       <div class="relative profile-wrapper">
 
         <div class="absolute inset-0 flex justify-center items-end pointer-events-none">
-          <div class="w-[520px] h-[520px] bg-blue-500/20 blur-3xl rounded-full"></div>
+          <div class="w-[340px] h-[340px] lg:w-[460px] lg:h-[460px] 2xl:w-[560px] 2xl:h-[560px] bg-blue-500/20 blur-3xl rounded-full"></div>
         </div>
 
         <div class="absolute inset-0 pointer-events-none cloud-overlay"></div>
@@ -79,42 +79,42 @@
         <img
           :src="profileImg"
           alt="Profile"
-          class="profile-img w-[500px] md:w-[600px] object-contain"
+          class="profile-img w-[340px] xl:w-[430px] 2xl:w-[520px] object-contain max-h-[70vh]"
         />
 
       </div>
     </div>
 
     <!-- SOCIAL ICONS (UNCHANGED) -->
-    <div class="hidden md:flex flex-col items-center gap-10 absolute top-1/2 right-20 -translate-y-1/2 z-30">
+    <div class="hidden xl:flex flex-col items-center gap-5 2xl:gap-7 absolute top-1/2 right-5 2xl:right-10 -translate-y-1/2 z-30">
       <div class="w-px h-16 bg-white/30"></div>
 
       <a href="https://www.instagram.com/achomunodisa/?hl=en" target="_blank" class="social-icon">
-        <i class="fab fa-instagram fa-3x"></i>
+        <i class="fab fa-instagram text-4xl 2xl:text-5xl"></i>
       </a>
 
       <a href="https://x.com/chomunodisaa68" target="_blank" class="social-icon">
-        <i class="fab fa-twitter fa-3x"></i>
+        <i class="fab fa-twitter text-4xl 2xl:text-5xl"></i>
       </a>
 
       <a href="https://www.facebook.com/TakuInnovations" target="_blank" class="social-icon">
-        <i class="fab fa-facebook fa-3x"></i>
+        <i class="fab fa-facebook text-4xl 2xl:text-5xl"></i>
       </a>
 
       <a href="https://wa.me/263780488779" target="_blank" class="social-icon">
-        <i class="fab fa-whatsapp fa-3x"></i>
+        <i class="fab fa-whatsapp text-4xl 2xl:text-5xl"></i>
       </a>
 
       <a href="mailto:takunda@example.com" class="social-icon">
-        <i class="fas fa-envelope fa-3x"></i>
+        <i class="fas fa-envelope text-4xl 2xl:text-5xl"></i>
       </a>
 
       <a href="https://www.linkedin.com/in/abel-chomunodisa-765280270/" target="_blank" class="social-icon">
-        <i class="fab fa-linkedin fa-3x"></i>
+        <i class="fab fa-linkedin text-4xl 2xl:text-5xl"></i>
       </a>
 
       <a href="https://github.com/Sparta503" target="_blank" class="social-icon">
-        <i class="fab fa-github fa-3x"></i>
+        <i class="fab fa-github text-4xl 2xl:text-5xl"></i>
       </a>
     </div>
 
@@ -283,6 +283,12 @@ onMounted(() => {
   background: radial-gradient(circle, rgba(88, 145, 236, 0.25), transparent 30%);
   filter: blur(50px);
   z-index: -1;
+}
+
+@media (max-height: 780px) {
+  .profile-img {
+    max-height: 62vh;
+  }
 }
 
 .cursor {
