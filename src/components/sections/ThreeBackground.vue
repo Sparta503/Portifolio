@@ -161,7 +161,8 @@ onBeforeUnmount(() => {
 .scene {
   position: fixed;
   inset: 0;
-  z-index: -1;
-  background: #05070f;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, #0a1633 0%, #081126 45%, #05070f 100%);
 }
 </style>
