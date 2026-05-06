@@ -62,7 +62,7 @@
             <a href="#projects" class="glow-btn">⬇ My Projects</a>
 
             <a
-              href="/Abel_Chomunodisa_Resume.pdf"
+              href="/Abel_Chomunodisa_Resume%20(1).pdf"
               class="glow-btn"
               @click.prevent="downloadCv"
             >
@@ -119,13 +119,13 @@ const downloadCv = async () => {
   isDownloading.value = true
   isDownloaded.value = false
 
-  const res = await fetch("/Abel_Chomunodisa_Resume.pdf")
+  const res = await fetch("/Abel_Chomunodisa_Resume%20(1).pdf")
   const blob = await res.blob()
   const url = URL.createObjectURL(blob)
 
   const a = document.createElement("a")
   a.href = url
-  a.download = "Abel_Chomunodisa_Resume.pdf"
+  a.download = "Abel_Chomunodisa_Resume (1).pdf"
   a.click()
 
   URL.revokeObjectURL(url)
